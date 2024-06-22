@@ -1,0 +1,4 @@
+.custom-placeholder::placeholder {
+    font-size: 10px; /* Chỉnh kích thước text của placeholder */
+    color: #ffffff; /* Thay đổi màu của placeholder nếu cần */
+}
