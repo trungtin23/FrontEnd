@@ -14,40 +14,7 @@ interface ChatMessage {
 const Message: React.FC<MessageProps> = ({ webSocket, chatName }) => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
 
-  useEffect(() => {
-    if (webSocket.readyState === WebSocket.OPEN) {
-      const getMessagesData = {
-        action: 'onchat',
-        data: {
-          event: 'GET_PEOPLE_CHAT_MES',
-          data: {
-            name: chatName,
-            page: 1
-          }
-        }
-      };
-      const jsonGetMessages = JSON.stringify(getMessagesData);
-      console.log('Chuỗi JSON get messages:', jsonGetMessages);
-      webSocket.send(jsonGetMessages);
 
-      webSocket.onmessage = (event) => {
-        const message = JSON.parse(event.data);
-        console.log('Received message:', message);
-        if (message.status === 'success') {
-          setMessages(message.data);
-        } else {
-          alert('Không thể lấy danh sách tin nhắn! Vui lòng thử lại.');
-        }
-      };
-
-      webSocket.onerror = (error) => {
-        console.error('WebSocket error:', error);
-        alert('Lỗi kết nối WebSocket!');
-      };
-    } else {
-      alert('WebSocket không kết nối. Vui lòng thử lại sau.');
-    }
-  }, [webSocket, chatName]);
 
   return (
       <div className='p-4'>
