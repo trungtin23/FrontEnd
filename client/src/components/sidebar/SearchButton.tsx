@@ -16,7 +16,7 @@ const SearchButton = () => {
                     type="text"
                     placeholder='Tên của phòng hoặc người khác'
 
-                    className='w-44 text-white input input-bordered rounded-full custom-placeholder '
+                    className='w-44 text-black input input-bordered rounded-full custom-placeholder '
                 />
                 <input
                     type="checkbox"
