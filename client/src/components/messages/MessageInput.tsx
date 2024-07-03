@@ -10,20 +10,22 @@ const MessageInput: React.FC<MessageInputProps> = ({ webSocket }) => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        if (message.trim() !== '' && webSocket && webSocket.readyState === WebSocket.OPEN) {
-            const messageData = {
+        const handleSendMessage = () => {
+            const sendMessageData = {
                 action: 'onchat',
                 data: {
-                    event: 'SEND_MESSAGE',
+                    event: 'SEND_CHAT',
                     data: {
-                        message: message,
-                        // Add other necessary fields if needed
-                    }
-                }
+                        type: 'room',
+                        to: 'abc', // Replace with the actual recipient or room ID
+                        mes: message,
+                    },
+                },
             };
-            webSocket.send(JSON.stringify(messageData));
-            setMessage(''); // Clear the input field after sending the message
-        }
+
+            const jsonString = JSON.stringify(sendMessageData);
+
+        };
     };
 
     return (
@@ -37,7 +39,7 @@ const MessageInput: React.FC<MessageInputProps> = ({ webSocket }) => {
                     onChange={(e) => setMessage(e.target.value)}
                 />
             </div>
-            <button type='submit' className='bg-white rounded-half flex items-center justify-center ml-3 border-2 border-black w-10'>
+            <button  type='submit' className='bg-white rounded-half flex items-center justify-center ml-3 border-2 border-black w-10'>
                 <BsSend />
             </button>
         </form>

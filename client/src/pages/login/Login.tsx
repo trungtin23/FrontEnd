@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWebSocket } from '../../context/WebSocketContext';
+import {WebSocketAPI} from "../../context/WebSocketAPI";
+
 
 interface LoginProps {}
 
@@ -14,19 +16,8 @@ const Login: React.FC<LoginProps> = () => {
     event.preventDefault();
 
     if (webSocket && webSocket.readyState === WebSocket.OPEN) {
-      const loginData = {
-        action: 'onchat',
-        data: {
-          event: 'LOGIN',
-          data: {
-            user: username,
-            pass: password,
-          },
-        },
-      };
-
-      const JsonLogin = JSON.stringify(loginData);
-      webSocket.send(JsonLogin);
+      const api = new WebSocketAPI(webSocket);
+      api.loginUser(username, password);
 
       const handleWebSocketMessage = (event: MessageEvent) => {
         const message = JSON.parse(event.data);
