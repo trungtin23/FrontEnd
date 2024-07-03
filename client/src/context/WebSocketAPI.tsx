@@ -1,5 +1,3 @@
-import { WebSocket } from 'ws';
-
 export class WebSocketAPI {
     private socket: WebSocket;
 
@@ -17,11 +15,14 @@ export class WebSocketAPI {
         });
         this.socket.send(message);
     }
+
     loginUser(user: string, pass: string) {
         const message = JSON.stringify({
             action: 'onchat',
-            event: 'LOGIN',
-            data: { user, pass }
+            data: {
+                event: 'LOGIN',
+                data: { user, pass }
+            }
         });
         this.socket.send(message);
     }
@@ -47,6 +48,7 @@ export class WebSocketAPI {
         });
         this.socket.send(chatMessage);
     }
+
     createRoom(roomName: string) {
         const createRoomMessage = JSON.stringify({
             action: 'onchat',
@@ -57,6 +59,7 @@ export class WebSocketAPI {
         });
         this.socket.send(createRoomMessage);
     }
+
     joinRoom(roomName: string) {
         const joinRoomMessage = JSON.stringify({
             action: 'onchat',
@@ -67,6 +70,7 @@ export class WebSocketAPI {
         });
         this.socket.send(joinRoomMessage);
     }
+
     getPeopleChatMessages(userName: string, page: number) {
         const getMessagesMessage = JSON.stringify({
             action: 'onchat',
@@ -77,6 +81,7 @@ export class WebSocketAPI {
         });
         this.socket.send(getMessagesMessage);
     }
+
     getUserList() {
         const getUserListMessage = JSON.stringify({
             action: 'onchat',
@@ -86,6 +91,7 @@ export class WebSocketAPI {
         });
         this.socket.send(getUserListMessage);
     }
+
     checkUser(userName: string) {
         const checkUserMessage = JSON.stringify({
             action: 'onchat',
@@ -96,6 +102,7 @@ export class WebSocketAPI {
         });
         this.socket.send(checkUserMessage);
     }
+
     logout() {
         const logoutMessage = JSON.stringify({
             action: 'onchat',
@@ -105,5 +112,4 @@ export class WebSocketAPI {
         });
         this.socket.send(logoutMessage);
     }
-
 }
