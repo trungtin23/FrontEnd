@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWebSocket } from '../../context/WebSocketContext';
-import {WebSocketAPI} from "../../context/WebSocketAPI";
 
 interface RegisterProps {}
 
@@ -12,45 +11,47 @@ const Register: React.FC<RegisterProps> = () => {
   const { webSocket, connectWebSocket } = useWebSocket();
 
   useEffect(() => {
-    if (!webSocket || webSocket.readyState !== WebSocket.OPEN) {
-      connectWebSocket();
-    }
-  }, [webSocket, connectWebSocket]);
+    connectWebSocket();
+  }, [connectWebSocket]);
 
   const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (webSocket && webSocket.readyState === WebSocket.OPEN) {
-      const api = new WebSocketAPI(webSocket);
-      api.registerUser(username, password);
+      const registerData = {
+        action: 'onchat',
+        data: {
+          event: 'REGISTER',
+          data: {
+            user: username,
+            pass: password,
+          },
+        },
+      };
+      const JsonRegister = JSON.stringify(registerData);
+      console.log('Chuỗi JSON register:', JsonRegister);
+      webSocket.send(JsonRegister);
 
-      const handleWebSocketMessage = (event: MessageEvent) => {
+      webSocket.onmessage = (event) => {
         const message = JSON.parse(event.data);
         console.log('Received message:', message);
         if (message.status === 'success') {
+          // Đăng ký thành công
           alert('Đăng ký thành công!');
           navigate('/login');
         } else {
+          // Đăng ký thất bại
           alert('Đăng ký thất bại! Vui lòng kiểm tra lại thông tin.');
           webSocket.close();
         }
       };
 
-      const handleWebSocketError = (error: Event) => {
+      webSocket.onerror = (error) => {
         console.error('WebSocket error:', error);
         alert('Lỗi kết nối WebSocket!');
       };
-
-      webSocket.addEventListener('message', handleWebSocketMessage);
-      webSocket.addEventListener('error', handleWebSocketError);
-
-      return () => {
-        webSocket.removeEventListener('message', handleWebSocketMessage);
-        webSocket.removeEventListener('error', handleWebSocketError);
-      };
     } else {
       alert('Lỗi kết nối WebSocket!');
-      connectWebSocket(); // Reconnect WebSocket if not connected
     }
   };
 
