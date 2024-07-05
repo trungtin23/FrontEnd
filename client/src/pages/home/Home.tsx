@@ -1,4 +1,5 @@
 import React from 'react';
+import MessageContainer from '../../components/messages/MessageContainer';
 import Sidebar from '../../components/sidebar/Sidebar';
 import { useWebSocket } from '../../context/WebSocketContext';
 
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
             <div className="flex items-center justify-center mb-4">
                 <div className="border-2 border-gray-400 flex h-700 w-900">
                     <Sidebar />
-                    {/* <MessageContainer webSocket={webSocket} /> */}
+                     <MessageContainer webSocket={null}  />
                 </div>
             </div>
             <p className="text-center text-gray-500 text-xs">

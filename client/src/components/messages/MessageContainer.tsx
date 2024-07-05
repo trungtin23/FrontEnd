@@ -14,7 +14,10 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ webSocket }) => {
                 <span className='text-gray-500 font-bold'>Mai Xuân Thức</span>
             </div>
             <Messages />
-            <MessageInput webSocket={null} />
+            <div className="mt-auto">
+                <MessageInput webSocket={null} />
+            </div>
+
         </div>
     );
 };
