@@ -5,21 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/context/WebSocketAPI.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/WebSocketAPI.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/WebSocketAPI.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/context/WebSocketContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/WebSocketContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/resgister/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/resgister/Register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +71,13 @@
       <workItem from="1720184388830" duration="1094000" />
       <workItem from="1720187356031" duration="605000" />
       <workItem from="1720194432692" duration="2278000" />
+      <workItem from="1720259041491" duration="3014000" />
+      <workItem from="1720292062128" duration="594000" />
+      <workItem from="1720331752839" duration="335000" />
+      <workItem from="1720343333297" duration="833000" />
+      <workItem from="1720358680830" duration="3273000" />
+      <workItem from="1720362101928" duration="153000" />
+      <workItem from="1720362726973" duration="324000" />
     </task>
     <servers />
   </component>

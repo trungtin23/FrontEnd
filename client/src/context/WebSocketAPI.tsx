@@ -5,6 +5,10 @@ export class WebSocketAPI {
         this.socket = socket;
     }
 
+    getSocket(): WebSocket {
+        return this.socket;
+    }
+
     registerUser(user: string, pass: string) {
         const message = JSON.stringify({
             action: 'onchat',

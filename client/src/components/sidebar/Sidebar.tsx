@@ -7,10 +7,18 @@ import { useWebSocket } from '../../context/WebSocketContext';
 const Sidebar: React.FC = () => {
     const { webSocket, connectWebSocket } = useWebSocket();
 
+
+    const handleInitiateChat = (username: string) => {
+        // Xử lý logic khi khởi tạo cuộc trò chuyện với username đã chọn
+        console.log(`Initiating chat with ${username}`);
+    };
+
     return (
-        <div className='border-r w-400 border-slate-500 p-4 flex flex-col overflow-auto'>
-            <SearchButton />
-            <Conversations />
+        <div className='border-r w-400 border-gray-500 p-4 flex flex-col overflow-auto'>
+            <SearchButton onInitiateChat={handleInitiateChat} />
+            <div className='mt-4 flex-1'>
+                <Conversations />
+            </div>
             <LogoutButton webSocket={webSocket} connectWebSocket={connectWebSocket} />
         </div>
     );

@@ -1,20 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Message from './Message';
-import MessageInput from './MessageInput';
 
-const Messages = () => {
-  const [webSocket, setWebSocket] = useState<WebSocket | null>(null);
+interface MessageData {
+    id: string;
+    sender: string;
+    content: string;
+    timestamp: string;
+    isSent: boolean;
+}
 
+interface MessagesProps {
+    messages: MessageData[];
+}
 
-
-  return (
-      <div className='overflow-auto'>
-        <Message  />
-        <Message  />
-        <Message  />
-
-      </div>
-  );
+const Messages: React.FC<MessagesProps> = ({ messages }) => {
+    return (
+        <div className="p-4">
+            {messages.map(message => (
+                <Message
+                    key={message.id}
+                    sender={message.sender}
+                    content={message.content}
+                    timestamp={message.timestamp}
+                    isSent={message.isSent}
+                />
+            ))}
+        </div>
+    );
 };
 
 export default Messages;

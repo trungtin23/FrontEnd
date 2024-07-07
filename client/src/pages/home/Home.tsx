@@ -2,9 +2,11 @@ import React from 'react';
 import MessageContainer from '../../components/messages/MessageContainer';
 import Sidebar from '../../components/sidebar/Sidebar';
 import { useWebSocket } from '../../context/WebSocketContext';
+import { WebSocketAPI } from '../../context/WebSocketAPI'; // Đảm bảo import đúng đường dẫn
 
-const Home: React.FC = () => {
+const HomeContent: React.FC = () => {
     const { webSocket, connectWebSocket } = useWebSocket();
+    const webSocketAPI = webSocket ? new WebSocketAPI(webSocket) : null;
 
     return (
         <div className="bg-white h-full p-4">
@@ -12,14 +14,14 @@ const Home: React.FC = () => {
             <div className="flex items-center justify-center mb-4">
                 <div className="border-2 border-gray-400 flex h-700 w-900">
                     <Sidebar />
-                     <MessageContainer webSocket={null}  />
+                    <MessageContainer webSocketAPI={webSocketAPI} recipient={''} />
                 </div>
             </div>
             <p className="text-center text-gray-500 text-xs">
-                &copy;Lập trình FE-2024- Nhóm 4.
+                &copy; Lập trình FE-2024- Nhóm 4.
             </p>
         </div>
     );
 };
 
-export default Home;
+export default HomeContent;
