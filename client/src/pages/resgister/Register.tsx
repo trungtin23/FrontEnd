@@ -1,57 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { WebSocketAPI } from '../../context/WebSocketAPI';
-import { useWebSocket } from '../../context/WebSocketContext';
+import { useWebSocket } from '../../context/SocketContext';
+import useRegister from "../../hooks/useRegister";
 
 interface RegisterProps {}
 
 const Register: React.FC<RegisterProps> = () => {
+
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const navigate = useNavigate();
-  const { webSocket, connectWebSocket } = useWebSocket();
 
-  useEffect(() => {
-    if (!webSocket || webSocket.readyState !== WebSocket.OPEN) {
-      connectWebSocket();
-    }
-  }, [webSocket, connectWebSocket]);
+  const { loading, register } = useRegister();
 
-  const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
 
-    if (webSocket && webSocket.readyState === WebSocket.OPEN) {
-      const api = new WebSocketAPI(webSocket);
-      api.registerUser(username, password);
 
-      const handleWebSocketMessage = (event: MessageEvent) => {
-        const message = JSON.parse(event.data);
-        console.log('Received message:', message);
-        if (message.status === 'success') {
-          alert('Đăng ký thành công!');
-          navigate('/login');
-        } else {
-          alert('Đăng ký thất bại! Vui lòng kiểm tra lại thông tin.');
-          webSocket.close();
-        }
-      };
-
-      const handleWebSocketError = (error: Event) => {
-        console.error('WebSocket error:', error);
-        alert('Lỗi kết nối WebSocket!');
-      };
-
-      webSocket.addEventListener('message', handleWebSocketMessage);
-      webSocket.addEventListener('error', handleWebSocketError);
-
-      return () => {
-        webSocket.removeEventListener('message', handleWebSocketMessage);
-        webSocket.removeEventListener('error', handleWebSocketError);
-      };
-    } else {
-      alert('Lỗi kết nối WebSocket!');
-      connectWebSocket(); // Reconnect WebSocket if not connected
-    }
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await register(username,password);
   };
 
   return (

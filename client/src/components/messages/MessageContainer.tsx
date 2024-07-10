@@ -51,7 +51,7 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ webSocketAPI, recip
             </div>
             <div className="mt-auto">
                 <MessageInput webSocketAPI={webSocketAPI} recipient={recipient} sendMessage={sendMessage}
-                              webSocket={null} />
+                              />
             </div>
         </div>
     );

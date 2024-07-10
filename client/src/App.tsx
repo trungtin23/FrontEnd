@@ -1,22 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from "react-router-dom";
 import Login from './pages/login/Login';
-import Register from "./pages/resgister/Register";
-import Home from './pages/home/Home';
-import { WebSocketProvider } from './context/WebSocketContext';
 
-const App = () => {
+
+
+import Home from './pages/home/Home';
+import { Toaster } from 'react-hot-toast';
+import {useAuthContext} from "./context/AuthContext";
+import Register from "./pages/resgister/Register";
+
+const App: React.FC = () => {
+    const { authUser } = useAuthContext();
+
     return (
-        <WebSocketProvider>
-            <Router>
-                <Routes>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/" element={<Login />} />
-                </Routes>
-            </Router>
-        </WebSocketProvider>
+       <div>
+           <Routes>
+               <Route path='/' element={authUser ? <Home /> : <Navigate to={"/login"} />} />
+               <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
+               <Route path='/reg' element={authUser ? <Navigate to='/' /> : <Register />} />
+           </Routes>
+           <Toaster />
+
+       </div>
+
+
     );
 };
 

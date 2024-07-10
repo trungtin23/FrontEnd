@@ -1,15 +1,14 @@
+// WebSocketAPI.jsx
 export class WebSocketAPI {
-    private socket: WebSocket;
-
-    constructor(socket: WebSocket) {
+    constructor(socket) {
         this.socket = socket;
     }
 
-    getSocket(): WebSocket {
+    getSocket() {
         return this.socket;
     }
 
-    registerUser(user: string, pass: string) {
+    registerUser(user, pass) {
         const message = JSON.stringify({
             action: 'onchat',
             data: {
@@ -20,7 +19,7 @@ export class WebSocketAPI {
         this.socket.send(message);
     }
 
-    loginUser(user: string, pass: string) {
+    loginUser(user, pass) {
         const message = JSON.stringify({
             action: 'onchat',
             data: {
@@ -31,7 +30,7 @@ export class WebSocketAPI {
         this.socket.send(message);
     }
 
-    sendMessageToRoom(room: string, message: string) {
+    sendMessageToRoom(room, message) {
         const chatMessage = JSON.stringify({
             action: 'onchat',
             data: {
@@ -42,7 +41,7 @@ export class WebSocketAPI {
         this.socket.send(chatMessage);
     }
 
-    sendMessageToUser(user: string, message: string) {
+    sendMessageToUser(user, message) {
         const chatMessage = JSON.stringify({
             action: 'onchat',
             data: {
@@ -53,7 +52,7 @@ export class WebSocketAPI {
         this.socket.send(chatMessage);
     }
 
-    createRoom(roomName: string) {
+    createRoom(roomName) {
         const createRoomMessage = JSON.stringify({
             action: 'onchat',
             data: {
@@ -64,7 +63,7 @@ export class WebSocketAPI {
         this.socket.send(createRoomMessage);
     }
 
-    joinRoom(roomName: string) {
+    joinRoom(roomName) {
         const joinRoomMessage = JSON.stringify({
             action: 'onchat',
             data: {
@@ -75,7 +74,7 @@ export class WebSocketAPI {
         this.socket.send(joinRoomMessage);
     }
 
-    getPeopleChatMessages(userName: string, page: number) {
+    getPeopleChatMessages(userName, page) {
         const getMessagesMessage = JSON.stringify({
             action: 'onchat',
             data: {
@@ -96,7 +95,7 @@ export class WebSocketAPI {
         this.socket.send(getUserListMessage);
     }
 
-    checkUser(userName: string) {
+    checkUser(userName) {
         const checkUserMessage = JSON.stringify({
             action: 'onchat',
             data: {

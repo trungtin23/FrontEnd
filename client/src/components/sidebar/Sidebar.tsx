@@ -2,7 +2,7 @@ import React from 'react';
 import SearchButton from './SearchButton';
 import Conversations from './Conversations';
 import LogoutButton from './LogoutButton';
-import { useWebSocket } from '../../context/WebSocketContext';
+import { useWebSocket } from '../../context/SocketContext';
 
 const Sidebar: React.FC = () => {
     const { webSocket, connectWebSocket } = useWebSocket();

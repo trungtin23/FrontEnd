@@ -1,14 +1,9 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-interface WebSocketContextType {
-    webSocket: WebSocket | null;
-    connectWebSocket: () => void;
-}
+const WebSocketContext = createContext(null);
 
-const WebSocketContext = createContext<WebSocketContextType | null>(null);
-
-export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const [webSocket, setWebSocket] = useState<WebSocket | null>(null);
+export const WebSocketProvider = ({ children }) => {
+    const [webSocket, setWebSocket] = useState(null);
 
     const connectWebSocket = () => {
         if (webSocket && (webSocket.readyState === WebSocket.OPEN || webSocket.readyState === WebSocket.CONNECTING)) {
@@ -31,6 +26,21 @@ export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({ children 
         };
     };
 
+    const registerUser = (username, password) => {
+        // Ensure WebSocket is connected
+        connectWebSocket();
+
+        // Send registration request
+        const message = JSON.stringify({
+            action: 'onchat',
+            data: {
+                event: 'REGISTER',
+                data: { user: username, pass: password }
+            }
+        });
+        webSocket.send(message);
+    };
+
     useEffect(() => {
         connectWebSocket();
         return () => {
@@ -39,7 +49,7 @@ export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({ children 
     }, []);
 
     return (
-        <WebSocketContext.Provider value={{ webSocket, connectWebSocket }}>
+        <WebSocketContext.Provider value={{ webSocket, connectWebSocket, registerUser }}>
             {children}
         </WebSocketContext.Provider>
     );
