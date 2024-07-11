@@ -19,10 +19,8 @@ const Messages: React.FC<MessagesProps> = ({ messages }) => {
             {messages.map(message => (
                 <Message
                     key={message.id}
-                    sender={message.sender}
-                    content={message.content}
-                    timestamp={message.timestamp}
-                    isSent={message.isSent}
+
+
                 />
             ))}
         </div>

@@ -19,7 +19,7 @@ const Sidebar: React.FC = () => {
             <div className='mt-4 flex-1'>
                 <Conversations />
             </div>
-            <LogoutButton webSocket={webSocket} connectWebSocket={connectWebSocket} />
+            <LogoutButton  />
         </div>
     );
 };

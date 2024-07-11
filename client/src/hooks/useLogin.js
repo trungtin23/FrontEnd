@@ -1,11 +1,11 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useWebSocket } from "../context/SocketContext"; // Thay đổi đường dẫn phù hợp
-
+import {useAuthContext} from "../context/AuthContext";
 const useLogin = () => {
     const [loading, setLoading] = useState(false);
     const { webSocket } = useWebSocket();
-
+    const {setAuthUser} = useAuthContext();
     const login = async (username, password) => {
         const success = handleInputErrors(username, password);
         if (!success) return;
@@ -29,7 +29,7 @@ const useLogin = () => {
 
                 // Xử lý khi đăng nhập thành công
                 localStorage.setItem("user", JSON.stringify(data));
-                // setAuthUser(data); // Đặt lại authUser nếu cần
+                setAuthUser(data);
 
                 // Hiển thị thông báo hoặc thực hiện hành động phù hợp khi đăng nhập thành công
                 toast.success("Login successful!");

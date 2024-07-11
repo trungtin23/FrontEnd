@@ -26,20 +26,7 @@ export const WebSocketProvider = ({ children }) => {
         };
     };
 
-    const registerUser = (username, password) => {
-        // Ensure WebSocket is connected
-        connectWebSocket();
 
-        // Send registration request
-        const message = JSON.stringify({
-            action: 'onchat',
-            data: {
-                event: 'REGISTER',
-                data: { user: username, pass: password }
-            }
-        });
-        webSocket.send(message);
-    };
 
     useEffect(() => {
         connectWebSocket();
@@ -49,7 +36,7 @@ export const WebSocketProvider = ({ children }) => {
     }, []);
 
     return (
-        <WebSocketContext.Provider value={{ webSocket, connectWebSocket, registerUser }}>
+        <WebSocketContext.Provider value={{ webSocket, connectWebSocket }}>
             {children}
         </WebSocketContext.Provider>
     );
