@@ -1,36 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CiLogout } from 'react-icons/ci';
+import useLogout from "../../hooks/useLogout";
 
-interface LogoutButtonProps {
-    webSocket: WebSocket | null;
-    connectWebSocket: () => void;
-}
 
-const LogoutButton: React.FC<LogoutButtonProps> = ({ webSocket, connectWebSocket }) => {
-    const navigate = useNavigate();
 
-    const handleLogout = () => {
-        if (webSocket) {
-            const logoutData = {
-                action: 'onchat',
-                data: {
-                    event: 'LOGOUT'
-                }
-            };
-            webSocket.send(JSON.stringify(logoutData));
-            webSocket.close();
-        }
-        connectWebSocket(); // Kết nối lại WebSocket
-        navigate('/login');
-    };
+const LogoutButton: React.FC = () => {
+    const {loading, logout} = useLogout();
+
+
 
     return (
-        <div className='flex items-end mt-auto cursor-pointer' onClick={handleLogout}>
+        <div className='flex items-end mt-auto cursor-pointer' >
             <div>
-                <CiLogout />
-            </div>
-            <p className='ml-2 text-sm'>Đăng xuất</p>
+                        <CiLogout />
+                    </div>
+            <p onClick={logout} className='ml-2 text-sm'>Đăng xuất</p>
         </div>
     );
 };

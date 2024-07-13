@@ -1,61 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useWebSocket } from '../../context/WebSocketContext';
+
+import useLogin from "../../hooks/useLogin";
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const navigate = useNavigate();
-  const { webSocket, connectWebSocket } = useWebSocket();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const { loading, login } = useLogin();
 
-    if (webSocket && webSocket.readyState === WebSocket.OPEN) {
-      const loginData = {
-        action: 'onchat',
-        data: {
-          event: 'LOGIN',
-          data: {
-            user: username,
-            pass: password,
-          },
-        },
-      };
-
-      const JsonLogin = JSON.stringify(loginData);
-      webSocket.send(JsonLogin);
-
-      const handleWebSocketMessage = (event: MessageEvent) => {
-        const message = JSON.parse(event.data);
-        if (message.status === 'success') {
-          alert('Đăng nhập thành công!');
-          navigate('/home');
-        } else {
-          alert('Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin đăng nhập.');
-        }
-      };
-
-      const handleWebSocketError = (error: Event) => {
-        console.error('WebSocket error:', error);
-        alert('Lỗi kết nối WebSocket!');
-      };
-
-      webSocket.addEventListener('message', handleWebSocketMessage);
-      webSocket.addEventListener('error', handleWebSocketError);
-
-      return () => {
-        webSocket.removeEventListener('message', handleWebSocketMessage);
-        webSocket.removeEventListener('error', handleWebSocketError);
-      };
-    } else {
-      alert('Lỗi kết nối WebSocket!');
-      connectWebSocket(); // Reconnect WebSocket if not connected
-    }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await login(username, password);
   };
-
   return (
       <div className="bg-gray-100 flex items-center justify-center h-screen">
         <div className="w-full max-w-xs">
@@ -99,7 +57,7 @@ const Login: React.FC<LoginProps> = () => {
                   className="bg-slate-400 w-28 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
               >
-                <a href="/register">Đăng ký</a>
+                <a href="/reg">Đăng ký</a>
               </button>
             </div>
           </form>

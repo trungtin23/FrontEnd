@@ -1,58 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useWebSocket } from '../../context/WebSocketContext';
+import { useWebSocket } from '../../context/SocketContext';
+import useRegister from "../../hooks/useRegister";
 
 interface RegisterProps {}
 
 const Register: React.FC<RegisterProps> = () => {
+
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const navigate = useNavigate();
-  const { webSocket, connectWebSocket } = useWebSocket();
 
-  useEffect(() => {
-    connectWebSocket();
-  }, [connectWebSocket]);
+  const { loading, register } = useRegister();
 
-  const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
 
-    if (webSocket && webSocket.readyState === WebSocket.OPEN) {
-      const registerData = {
-        action: 'onchat',
-        data: {
-          event: 'REGISTER',
-          data: {
-            user: username,
-            pass: password,
-          },
-        },
-      };
-      const JsonRegister = JSON.stringify(registerData);
-      console.log('Chuỗi JSON register:', JsonRegister);
-      webSocket.send(JsonRegister);
 
-      webSocket.onmessage = (event) => {
-        const message = JSON.parse(event.data);
-        console.log('Received message:', message);
-        if (message.status === 'success') {
-          // Đăng ký thành công
-          alert('Đăng ký thành công!');
-          navigate('/login');
-        } else {
-          // Đăng ký thất bại
-          alert('Đăng ký thất bại! Vui lòng kiểm tra lại thông tin.');
-          webSocket.close();
-        }
-      };
-
-      webSocket.onerror = (error) => {
-        console.error('WebSocket error:', error);
-        alert('Lỗi kết nối WebSocket!');
-      };
-    } else {
-      alert('Lỗi kết nối WebSocket!');
-    }
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await register(username,password);
   };
 
   return (

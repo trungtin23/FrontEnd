@@ -1,38 +1,28 @@
 import React, { useState } from 'react';
 import { BsSend } from "react-icons/bs";
 
+
+
 interface MessageInputProps {
-    webSocket: WebSocket | null;
+
+    recipient: string; // Thêm recipient để gửi tin nhắn cho người nhận cụ thể
 }
 
-const MessageInput: React.FC<MessageInputProps> = ({ webSocket }) => {
+interface MessageInputProps {
+    webSocket: WebSocket | null;
+    sendMessage: (messageContent: string) => void; // Thêm thuộc tính sendMessage
+}
+const MessageInput: React.FC = () => {
     const [message, setMessage] = useState('');
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        if (message.trim() !== '' && webSocket && webSocket.readyState === WebSocket.OPEN) {
-            const messageData = {
-                action: 'onchat',
-                data: {
-                    event: 'SEND_MESSAGE',
-                    data: {
-                        message: message,
-                        // Add other necessary fields if needed
-                    }
-                }
-            };
-            webSocket.send(JSON.stringify(messageData));
-            setMessage(''); // Clear the input field after sending the message
-        }
-    };
 
     return (
-        <form onSubmit={handleSubmit} className='px-4 my-3 flex'>
+        <form  className='px-4 my-3 flex'>
             <div className='w-full'>
                 <input
                     type="text"
                     className='border-2 border-gray-200 text-xl rounded block p-2 bg-white text-black w-full'
-                    placeholder='Nhập tin nhắn ở đây...'
+                    placeholder={`Nhập tin nhắn cho }...`}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />

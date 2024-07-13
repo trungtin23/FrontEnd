@@ -1,16 +1,28 @@
-import React from 'react'
-import Conversation from './Conversation'
-const Conversations = () => {
-  return (
-    <div className='flex flex-col py-2'>
-      <Conversation />
+import React, { useEffect, useState } from 'react';
+import { useWebSocket } from '../../context/SocketContext';
+import Conversation from './Conversation';
 
-      
-      
-      
-      
-    </div>
-  )
+
+interface User {
+    username: string;
 }
 
-export default Conversations
+const Conversations: React.FC = () => {
+    const [users, setUsers] = useState<User[]>([]);
+    const { webSocket } = useWebSocket();
+
+
+    return (
+        <div>
+            {users.map(user => (
+                <Conversation
+                    key={user.username}
+                    username={user.username}
+
+                />
+            ))}
+        </div>
+    );
+};
+
+export default Conversations;

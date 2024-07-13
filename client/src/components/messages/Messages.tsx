@@ -1,44 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Message from './Message';
-import MessageInput from './MessageInput';
 
-const Messages = () => {
-  const [webSocket, setWebSocket] = useState<WebSocket | null>(null);
+interface MessageData {
+    id: string;
+    sender: string;
+    content: string;
+    timestamp: string;
+    isSent: boolean;
+}
 
-  useEffect(() => {
-    const ws = new WebSocket('ws://140.238.54.136:8080/chat');
-    setWebSocket(ws);
+interface MessagesProps {
+    messages: MessageData[];
+}
 
-    ws.onopen = () => {
-      console.log('WebSocket connected');
-    };
+const Messages: React.FC<MessagesProps> = ({ messages }) => {
+    return (
+        <div className="p-4">
+            {messages.map(message => (
+                <Message
+                    key={message.id}
 
-    ws.onclose = () => {
-      console.log('WebSocket disconnected');
-      setWebSocket(null);
-    };
 
-    ws.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
-
-    return () => {
-      ws.close();
-    };
-  }, []);
-
-  return (
-      <div className='overflow-auto'>
-        {webSocket && (
-            <>
-              <Message webSocket={webSocket} chatName="SomeChatName" />
-              <Message webSocket={webSocket} chatName="SomeChatName" />
-              <Message webSocket={webSocket} chatName="SomeChatName" />
-              <MessageInput webSocket={webSocket} />
-            </>
-        )}
-      </div>
-  );
+                />
+            ))}
+        </div>
+    );
 };
 
 export default Messages;

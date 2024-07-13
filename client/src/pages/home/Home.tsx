@@ -1,8 +1,10 @@
 import React from 'react';
+import MessageContainer from '../../components/messages/MessageContainer';
 import Sidebar from '../../components/sidebar/Sidebar';
-import { useWebSocket } from '../../context/WebSocketContext';
+import { useWebSocket } from '../../context/SocketContext';
 
-const Home: React.FC = () => {
+
+const HomeContent: React.FC = () => {
     const { webSocket, connectWebSocket } = useWebSocket();
 
     return (
@@ -10,15 +12,15 @@ const Home: React.FC = () => {
             <h1 className="text-black font-bold text-2xl mb-4 text-center">Messaging</h1>
             <div className="flex items-center justify-center mb-4">
                 <div className="border-2 border-gray-400 flex h-700 w-900">
-                    <Sidebar />
-                    {/* <MessageContainer webSocket={webSocket} /> */}
+                    <Sidebar/>
+                    <MessageContainer  />
                 </div>
             </div>
             <p className="text-center text-gray-500 text-xs">
-                &copy;Lập trình FE-2024- Nhóm 4.
+                &copy; Lập trình FE-2024- Nhóm 4.
             </p>
         </div>
     );
 };
 
-export default Home;
+export default HomeContent;

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/hooks/useLogout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/zustand/useConversation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2imgQl6Rcnd6af4fwqQtuwHgM0W" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;maixuanthuc&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/emthuczz/Desktop/mern-chat-app-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\FE\\FE_PRJ\\FrontEnd\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17890.13" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="" />
+      <created>1720101154035</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720101154035</updated>
+      <workItem from="1720101155792" duration="283000" />
+      <workItem from="1720101448495" duration="36000" />
+      <workItem from="1720101509319" duration="136000" />
+      <workItem from="1720103861996" duration="241000" />
+      <workItem from="1720110607441" duration="39000" />
+      <workItem from="1720144506031" duration="4202000" />
+      <workItem from="1720184388830" duration="1094000" />
+      <workItem from="1720187356031" duration="605000" />
+      <workItem from="1720194432692" duration="2278000" />
+      <workItem from="1720259041491" duration="3014000" />
+      <workItem from="1720292062128" duration="594000" />
+      <workItem from="1720331752839" duration="335000" />
+      <workItem from="1720343333297" duration="833000" />
+      <workItem from="1720358680830" duration="3273000" />
+      <workItem from="1720362101928" duration="153000" />
+      <workItem from="1720362726973" duration="324000" />
+      <workItem from="1720409956300" duration="1350000" />
+      <workItem from="1720424799539" duration="894000" />
+      <workItem from="1720477920400" duration="594000" />
+      <workItem from="1720534510886" duration="86000" />
+      <workItem from="1720609448768" duration="1224000" />
+      <workItem from="1720626020049" duration="9774000" />
+      <workItem from="1720678278150" duration="3645000" />
+      <workItem from="1720702978335" duration="3741000" />
+      <workItem from="1720707006465" duration="924000" />
+      <workItem from="1720800659341" duration="592000" />
+      <workItem from="1720857345817" duration="146000" />
+      <workItem from="1720877805340" duration="995000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
