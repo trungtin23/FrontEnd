@@ -7,9 +7,9 @@ interface MessageProps {
     isSent?: boolean;
 }
 
-const Message: React.FC = () => {
+const Message: React.FC<MessageProps> = ({ sender, content, timestamp, isSent = false }) => {
     return (
-        <div className={`chat  ? 'chat-end' : 'chat-start'}`}>
+        <div className={`chat ${isSent ? 'chat-end' : 'chat-start'}`}>
             <div className="chat-image avatar">
                 <div className="w-10 rounded-full">
                     <img
@@ -19,11 +19,13 @@ const Message: React.FC = () => {
                 </div>
             </div>
             <div className="chat-header">
-
-                <time className="text-xs opacity-50"></time>
+                <span>{sender}</span>
+                <time className="text-xs opacity-50">{timestamp}</time>
             </div>
-            <div className="chat-bubble"></div>
-            {  <div className="chat-footer opacity-50">Delivered</div>}
+            <div className="chat-bubble">
+                <p>{content}</p>
+            </div>
+            {isSent && <div className="chat-footer opacity-50">Delivered</div>}
         </div>
     );
 };

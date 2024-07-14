@@ -22,7 +22,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "../../../../webstorm/WebStorm 2024.1.4/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es5.d.ts",
+    "../../../../webstorm/WebStorm 2024.1.4/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es5.d.ts"
   ],
   "extends": "../tsconfig.json"
  
