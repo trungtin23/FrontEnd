@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/useGetUserList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/useReLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useSendMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useSendMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +104,9 @@
       <workItem from="1720885925888" duration="1270000" />
       <workItem from="1720927210921" duration="5738000" />
       <workItem from="1720956420431" duration="7125000" />
+      <workItem from="1721021250488" duration="336000" />
+      <workItem from="1721056686745" duration="266000" />
+      <workItem from="1721143828053" duration="1059000" />
     </task>
     <servers />
   </component>

@@ -16,7 +16,6 @@ interface MessageContainerProps {
 }
 
 const MessageContainer: React.FC<MessageContainerProps> = ({ recipient }) => {
-    const [messages, loading] = useGetMessage(recipient); // Using recipient to fetch messages
 
     return (
         <div className='flex flex-col w-full'>
@@ -25,11 +24,7 @@ const MessageContainer: React.FC<MessageContainerProps> = ({ recipient }) => {
                 <span className='text-gray-500 font-bold'>{recipient}</span>
             </div>
             <div className='flex-1 p-4 overflow-y-auto'>
-                {loading ? (
-                    <div>Loading messages...</div>
-                ) : (
-                    <Messages/>
-                )}
+                <Messages/>
             </div>
             <div className="mt-auto">
                 <MessageInput />
