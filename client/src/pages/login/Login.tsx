@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 
 import useLogin from "../../hooks/useLogin";
+import e from "express";
+import {useAuthContext} from "../../context/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+    const navigate = useNavigate(); // Sử dụng hook useNavigate từ react-router-dom
+
 
   const { loading, login } = useLogin();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await login(username, password);
+    navigate('/');
+
   };
+
   return (
       <div className="bg-gray-100 flex items-center justify-center h-screen">
         <div className="w-full max-w-xs">
@@ -27,8 +35,9 @@ const Login: React.FC<LoginProps> = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="username"
                   type="text"
-                  value={username}
+                 value={username}
                   onChange={(e) => setUsername(e.target.value)}
+
                   required
               />
             </div>

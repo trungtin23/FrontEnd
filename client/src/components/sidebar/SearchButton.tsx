@@ -3,10 +3,10 @@ import { IoMdAddCircleOutline } from 'react-icons/io';
 import { FaCircleArrowRight } from 'react-icons/fa6';
 
 interface SearchButtonProps {
-    onInitiateChat: (username: string) => void;
+    onShowMessages: (username: string) => void; // Callback to show messages for a username
 }
 
-const SearchButton: React.FC<SearchButtonProps> = ({ onInitiateChat }) => {
+const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [username, setUsername] = useState('');
 
@@ -14,22 +14,21 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onInitiateChat }) => {
         setIsChecked(!isChecked);
     };
 
-    const handleInitiateChat = () => {
+    const handleRightButtonClick = () => {
         if (username.trim() !== '') {
-            onInitiateChat(username);
-            setUsername('');
+            onShowMessages(username); // Call the callback to show messages for the entered username
         }
     };
 
     return (
         <div className='mt-4'>
-            <form className='flex items-center'>
+            <form className='flex items-center' onSubmit={(e) => e.preventDefault()}>
                 <input
                     type='text'
-                    placeholder='Tên của phòng hoặc người khác'
+                    placeholder='Enter username'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className='w-44 text-white input input-bordered rounded-full custom-placeholder bg-slate-400'
+                    className='w-44 text-white input input-bordered rounded-full custom-placeholder bg-slate-300'
                 />
                 <input
                     type='checkbox'
@@ -38,16 +37,13 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onInitiateChat }) => {
                     className='checkbox checkbox-primary ml-2 mt-2'
                 />
                 {isChecked && (
-                    <div
-                        className='bg-blue-200 h-8 ml-2 mt-1 hover:bg-blue-700 cursor-pointer rounded'
-                        onClick={handleInitiateChat}
-                    >
+                    <div className='bg-blue-200 h-8 ml-2 mt-1 hover:bg-blue-700 cursor-pointer rounded'>
                         <IoMdAddCircleOutline size={30} />
                     </div>
                 )}
                 <div
                     className='bg-blue-200 hover:bg-blue-700 h-8 ml-2 w-8 justify-center flex items-center mt-1 cursor-pointer rounded'
-                    onClick={handleInitiateChat}
+                    onClick={handleRightButtonClick}
                 >
                     <FaCircleArrowRight style={{ color: 'black' }} size={24} />
                 </div>

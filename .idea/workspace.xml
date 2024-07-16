@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/useLogout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/zustand/useConversation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;maixuanthuc&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/emthuczz/Desktop/mern-chat-app-master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_PRJ/FrontEnd/client/src/hooks&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -55,6 +51,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FE\FE_PRJ\FrontEnd\client\src\hooks" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -98,6 +99,14 @@
       <workItem from="1720800659341" duration="592000" />
       <workItem from="1720857345817" duration="146000" />
       <workItem from="1720877805340" duration="995000" />
+      <workItem from="1720882708033" duration="2856000" />
+      <workItem from="1720885647794" duration="183000" />
+      <workItem from="1720885925888" duration="1270000" />
+      <workItem from="1720927210921" duration="5738000" />
+      <workItem from="1720956420431" duration="7125000" />
+      <workItem from="1721021250488" duration="336000" />
+      <workItem from="1721056686745" duration="266000" />
+      <workItem from="1721143828053" duration="1059000" />
     </task>
     <servers />
   </component>

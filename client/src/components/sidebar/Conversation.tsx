@@ -2,14 +2,18 @@ import React from 'react';
 
 interface ConversationProps {
     username: string;
+
 }
 
 const Conversation: React.FC<ConversationProps> = ({ username }) => {
     return (
-        <div className='flex gap-2 items-center p-2 rounded w-72 cursor-pointer'>
+        <div
+            className='flex gap-2 items-center p-2 rounded w-full cursor-pointer hover:bg-slate-300'
+
+        >
             <div className="avatar p-2 w-60 h-16">
                 <div className="w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt={username} />
+                    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="User Avatar" />
                 </div>
                 <div className='flex flex-col flex-1'>
                     <div className='flex gap-3 justify-between'>

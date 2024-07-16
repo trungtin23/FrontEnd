@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useWebSocket } from '../../context/SocketContext';
+import React from 'react';
 import Conversation from './Conversation';
-
-
-interface User {
-    username: string;
-}
+import useGetUserList from "../../hooks/useGetUserList";
 
 const Conversations: React.FC = () => {
-    const [users, setUsers] = useState<User[]>([]);
-    const { webSocket } = useWebSocket();
+    const{loading,usernames} = useGetUserList();
 
+    if (loading) return <div>Loading...</div>;
 
     return (
-        <div>
-            {users.map(user => (
+        <div className='p-2'>
+            {usernames.map((username: string) => (
                 <Conversation
-                    key={user.username}
-                    username={user.username}
-
+                    key={username}
+                    username={username}
                 />
             ))}
         </div>
