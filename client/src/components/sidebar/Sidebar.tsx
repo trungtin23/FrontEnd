@@ -17,7 +17,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onShowMessages }) => {
                 <SearchButton onShowMessages={onShowMessages} />
             </div>
 
-            <div className='mt-4 flex-1 '>
+            <div className='mt-4 flex-1  '>
                 <Conversations   />
             </div>
 

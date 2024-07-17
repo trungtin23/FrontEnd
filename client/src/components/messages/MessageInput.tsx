@@ -4,7 +4,7 @@ import useSendMessage from "../../hooks/useSendMessage";
 
 const MessageInput: React.FC = () => {
     const [message, setMessage] = useState("");
-    const { loading, sendMessage } = useSendMessage();
+    const {  sendMessage } = useSendMessage();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -25,7 +25,7 @@ const MessageInput: React.FC = () => {
                 />
             </div>
             <button type='submit' className='bg-white rounded-half flex items-center justify-center ml-3 border-2 border-black w-10'>
-                {loading ? "Sending..." : <BsSend />}
+                <BsSend />
             </button>
         </form>
     );

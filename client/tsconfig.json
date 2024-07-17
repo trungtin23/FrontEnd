@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "es5",
-  
     "lib": [
       "dom",
       "dom.iterable",
@@ -22,10 +21,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src",
-    "../../../../webstorm/WebStorm 2024.1.4/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es5.d.ts",
-    "../../../../webstorm/WebStorm 2024.1.4/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.es5.d.ts"
+    "src"
   ],
   "extends": "../tsconfig.json"
- 
 }

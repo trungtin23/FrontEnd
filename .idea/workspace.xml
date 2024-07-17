@@ -6,7 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/SocketContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/SocketContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetUserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useReLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useRegister.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useSendMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/resgister/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/resgister/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +64,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\FE\\FE_PRJ\\FrontEnd\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\FE\\FE_NGAY16\\FrontEnd\\client\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -107,6 +124,14 @@
       <workItem from="1721021250488" duration="336000" />
       <workItem from="1721056686745" duration="266000" />
       <workItem from="1721143828053" duration="1059000" />
+      <workItem from="1721145044778" duration="73000" />
+      <workItem from="1721145126453" duration="403000" />
+      <workItem from="1721183824565" duration="1769000" />
+      <workItem from="1721199638559" duration="592000" />
+      <workItem from="1721204579010" duration="3584000" />
+      <workItem from="1721208228377" duration="47000" />
+      <workItem from="1721208282728" duration="2000" />
+      <workItem from="1721214847717" duration="17000" />
     </task>
     <servers />
   </component>

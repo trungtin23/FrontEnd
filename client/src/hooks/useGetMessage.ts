@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useWebSocket } from "../context/SocketContext";
 import useConversation from "../zustand/useConversation";
 
-const useGetMessage = (username) => {
-    const [loading, setLoading] = useState(false);
+const useGetMessage = (username : string) => {
     const { messages, setMessages } = useConversation();
     const { webSocket } = useWebSocket();
 
@@ -12,7 +11,9 @@ const useGetMessage = (username) => {
 
         const getMessage = async () => {
             try {
-                setLoading(true);
+                if (webSocket) {
+
+
                 webSocket.send(JSON.stringify({
                     action: 'onchat',
                     data: {
@@ -28,17 +29,18 @@ const useGetMessage = (username) => {
                     }
                     setMessages(data);
                 };
+                }
             } catch (error) {
                 console.error(error);
             } finally {
-                setLoading(false);
+
             }
         };
 
         getMessage();
     }, [username, webSocket, setMessages]);
 
-    return [messages, loading] ;
+    return [messages] ;
 };
 
 export default useGetMessage;

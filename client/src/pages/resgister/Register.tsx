@@ -10,7 +10,7 @@ const Register: React.FC<RegisterProps> = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const { loading, register } = useRegister();
+  const {  register } = useRegister();
 
 
 
