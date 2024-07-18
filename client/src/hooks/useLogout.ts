@@ -1,59 +1,49 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useWebSocket } from "../context/SocketContext";
-import {useAuthContext} from "../context/AuthContext"; // Đảm bảo đường dẫn đúng
-
+import { useAuthContext } from "../context/AuthContext";
 
 const useLogout = () => {
-    const [loading, setLoading] = useState(false);
+
     const { webSocket } = useWebSocket();
-    const {setAuthUser} = useAuthContext();
+    const { setAuthUser } = useAuthContext();
 
     const logout = async () => {
 
-        setLoading(true);
         try {
-            // Gửi yêu cầu đăng nhập thông qua WebSocket
+           if (webSocket) {
+
+
             webSocket.send(JSON.stringify({
                 action: 'onchat',
                 data: {
                     event: 'LOGOUT'
-
                 }
             }));
 
-            // Lắng nghe kết quả từ server
+            // Listen for response from server
             webSocket.onmessage = (event) => {
                 const data = JSON.parse(event.data);
+
                 if (data.error) {
                     throw new Error(data.error);
                 }
 
-
-
-                localStorage.removeItem("user", JSON.stringify(data));
+                // Clear user data from localStorage and context
+                localStorage.removeItem("user");
                 setAuthUser(null);
 
-
-
+                toast.success("Logout successful!");
             };
-
-        } catch (error) {
+           }
+        } catch (error: any) { // Catch-all type for error handling
             toast.error(error.message);
         } finally {
-            setLoading(false);
+
         }
     };
 
-    return { loading, logout };
+    return {  logout };
 };
 
 export default useLogout;
-
-function handleInputErrors(username, password) {
-    if (!username || !password) {
-        toast.error("Please fill in all fields");
-        return false;
-    }
-    return true;
-}

@@ -4,33 +4,27 @@ import useGetMessage from "../../hooks/useGetMessage";
 
 interface MessageData {
     id: string;
-    sender: string;
-    content: string;
-    timestamp: string;
-    isSent: boolean;
+    name: string;
+    to: string;
+    mes: string;
+    type: number; // Assuming type is 0 for received and 1 for sent
+    createAt: string;
 }
 
 const Messages: React.FC = () => {
-    const [messages, loading ] = useGetMessage(); // Retrieve messages and loading state from useGetMessage hook
-
-    if (loading) {
-        return <div>Loading messages...</div>; // Optional: Show loading indicator
-    }
-
-    // Ensure messages is an array of MessageData
-    if (!Array.isArray(messages)) {
-        return <div>Error: Messages data is not in expected format.</div>; // Handle unexpected data format
-    }
+    const messages: MessageData[] = useGetMessage();
 
     return (
-        <div className="p-4">
+        <div className="p-4 flex flex-col space-y-2">
             {messages.map((message: MessageData) => (
                 <Message
                     key={message.id}
-                    sender={message.sender}
-                    content={message.content}
-                    timestamp={message.timestamp}
-                    isSent={message.isSent}
+                    id={message.id}
+                    sender={message.name}
+                    to={message.to}
+                    content={message.mes}
+                    timestamp={message.createAt}
+                     // Check if type is 1 for sent messages
                 />
             ))}
         </div>

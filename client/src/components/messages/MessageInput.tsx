@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { BsSend } from "react-icons/bs";
 import useSendMessage from "../../hooks/useSendMessage";
+import useConversation from "../../zustand/useConversation";
 
 const MessageInput: React.FC = () => {
     const [message, setMessage] = useState("");
-    const { loading, sendMessage } = useSendMessage();
+    const { sendMessage } = useSendMessage();
+    const { selectedConversation } = useConversation();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!message.trim()) return; // Trim whitespace and check for empty message
-        await sendMessage("recipient_username_here", message); // Replace with recipient username
+        if (!message.trim() || !selectedConversation) return; // Trim whitespace and check for empty message
+
+        await sendMessage(selectedConversation.name, message, selectedConversation.type); // Use the selected conversation's name and type
         setMessage("");
     };
 
@@ -25,7 +28,7 @@ const MessageInput: React.FC = () => {
                 />
             </div>
             <button type='submit' className='bg-white rounded-half flex items-center justify-center ml-3 border-2 border-black w-10'>
-                {loading ? "Sending..." : <BsSend />}
+                <BsSend />
             </button>
         </form>
     );

@@ -1,19 +1,21 @@
+// Conversations.tsx
+
 import React from 'react';
+import useGetUserList from '../../hooks/useGetUserList';
 import Conversation from './Conversation';
-import useGetUserList from "../../hooks/useGetUserList";
 
 const Conversations: React.FC = () => {
-    const{loading,usernames} = useGetUserList();
+    const usernames = useGetUserList();
 
-    if (loading) return <div>Loading...</div>;
 
     return (
-        <div className='p-2'>
-            {usernames.map((username: string) => (
+        <div className=''>
+            {usernames.map((user    ) => (
                 <Conversation
-                    key={username}
-                    username={username}
-                />
+                    key={user.id}
+                    name={user.name} // Use 'name' as username prop
+                    actionTime={user.actionTime} // Pass actionTime to Conversation if needed
+                    id={user.id}/>
             ))}
         </div>
     );

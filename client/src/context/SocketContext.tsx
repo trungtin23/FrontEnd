@@ -1,9 +1,14 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-const WebSocketContext = createContext(null);
+interface WebSocketContextType {
+    webSocket: WebSocket | null;
+    connectWebSocket: () => void;
+}
 
-export const WebSocketProvider = ({ children }) => {
-    const [webSocket, setWebSocket] = useState(null);
+const WebSocketContext = createContext<WebSocketContextType | null>(null);
+
+export const WebSocketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+    const [webSocket, setWebSocket] = useState<WebSocket | null>(null);
 
     const connectWebSocket = () => {
         if (webSocket && (webSocket.readyState === WebSocket.OPEN || webSocket.readyState === WebSocket.CONNECTING)) {
@@ -26,14 +31,14 @@ export const WebSocketProvider = ({ children }) => {
         };
     };
 
-
-
     useEffect(() => {
-        connectWebSocket();
+        if (!webSocket || webSocket.readyState === WebSocket.CLOSED) {
+            connectWebSocket();
+        }
         return () => {
             webSocket?.close();
         };
-    }, []);
+    }, [webSocket]);
 
     return (
         <WebSocketContext.Provider value={{ webSocket, connectWebSocket }}>
@@ -42,7 +47,7 @@ export const WebSocketProvider = ({ children }) => {
     );
 };
 
-export const useWebSocket = () => {
+export const useWebSocket = (): WebSocketContextType => {
     const context = useContext(WebSocketContext);
     if (!context) {
         throw new Error('useWebSocket must be used within a WebSocketProvider');

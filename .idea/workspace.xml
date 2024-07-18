@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +40,13 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;maixuanthuc&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_PRJ/FrontEnd/client/src/hooks&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_NGAY16/FrontEnd&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\FE\\FE_PRJ\\FrontEnd\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\FE\\FE_NGAY16\\FrontEnd\\client\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -107,6 +106,17 @@
       <workItem from="1721021250488" duration="336000" />
       <workItem from="1721056686745" duration="266000" />
       <workItem from="1721143828053" duration="1059000" />
+      <workItem from="1721145044778" duration="73000" />
+      <workItem from="1721145126453" duration="403000" />
+      <workItem from="1721183824565" duration="1769000" />
+      <workItem from="1721199638559" duration="592000" />
+      <workItem from="1721204579010" duration="3584000" />
+      <workItem from="1721208228377" duration="47000" />
+      <workItem from="1721208282728" duration="2000" />
+      <workItem from="1721214847717" duration="17000" />
+      <workItem from="1721276042709" duration="129000" />
+      <workItem from="1721276174876" duration="13000" />
+      <workItem from="1721276199301" duration="10000" />
     </task>
     <servers />
   </component>

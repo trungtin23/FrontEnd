@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import useLogin from "../../hooks/useLogin";
-import e from "express";
-import {useAuthContext} from "../../context/AuthContext";
-import {useNavigate} from "react-router-dom";
 
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-    const navigate = useNavigate(); // Sử dụng hook useNavigate từ react-router-dom
+  const navigate = useNavigate();
 
-
-  const { loading, login } = useLogin();
+  const {  login } = useLogin();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await login(username, password);
-    navigate('/');
 
   };
 
@@ -35,9 +30,8 @@ const Login: React.FC<LoginProps> = () => {
                   className="shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="username"
                   type="text"
-                 value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-
+                  value={username}
+                  onChange={(e) => setUsername((e.target as HTMLInputElement).value)}
                   required
               />
             </div>
@@ -51,7 +45,7 @@ const Login: React.FC<LoginProps> = () => {
                   type="password"
                   placeholder="**************"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setPassword((e.target as HTMLInputElement).value)}
                   required
               />
             </div>
@@ -66,7 +60,7 @@ const Login: React.FC<LoginProps> = () => {
                   className="bg-slate-400 w-28 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
               >
-                <a href="/reg">Đăng ký</a>
+                <a href="/register">Đăng ký</a>
               </button>
             </div>
           </form>

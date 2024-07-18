@@ -6,7 +6,7 @@ import useLogout from "../../hooks/useLogout";
 
 
 const LogoutButton: React.FC = () => {
-    const {loading, logout} = useLogout();
+    const { logout} = useLogout();
 
 
 
