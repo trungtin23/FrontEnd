@@ -21,17 +21,6 @@ const useGetMessage = () => {
         const getMessage = async () => {
             try {
                 if (webSocket) {
-                    console.log('Sending WebSocket message:', {
-                        action: 'onchat',
-                        data: {
-                            event: selectedConversation.type === "group" ? "GET_ROOM_CHAT_MES" : "GET_PEOPLE_CHAT_MES",
-                            data: {
-                                name: selectedConversation.name,
-                                page: 1,
-                            }
-                        },
-                    });
-
                     webSocket.send(JSON.stringify({
                         action: 'onchat',
                         data: {
@@ -45,20 +34,27 @@ const useGetMessage = () => {
 
                     webSocket.onmessage = (event) => {
                         const data = JSON.parse(event.data);
-                        console.log('Received WebSocket message:', data);
-                        const messageList: Message[] = data.data.map((message: Message) => ({
-                            id: message.id,
-                            name: message.name,
-                            to: message.to,
-                            mes: message.mes,
-                            type: message.type,
-                            createAt: message.createAt,
-                        }));
-
-                        if (data.error) {
-                            throw new Error(data.error);
+                        if (data.event === 'GET_ROOM_CHAT_MES' || data.event === 'GET_PEOPLE_CHAT_MES') {
+                            const messageList: Message[] = data.data.map((message: Message) => ({
+                                id: message.id,
+                                name: message.name,
+                                to: message.to,
+                                mes: message.mes,
+                                type: message.type,
+                                createAt: message.createAt,
+                            }));
+                            setMessages(messageList);
+                        } else if (data.event === 'SEND_CHAT') {
+                            const newMessage: Message = {
+                                id: data.id,
+                                name: data.name,
+                                to: data.to,
+                                mes: data.mes,
+                                type: data.type,
+                                createAt: data.createAt,
+                            };
+                            setMessages((prevMessages: Message[]) => [...prevMessages, newMessage]);
                         }
-                        setMessages(messageList);
                     };
                 }
             } catch (error) {
