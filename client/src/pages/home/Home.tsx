@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MessageContainer from '../../components/messages/MessageContainer';
 import Sidebar from '../../components/sidebar/Sidebar';
+import {useAuthContext} from "../../context/AuthContext";
 
 const HomeContent: React.FC = () => {
     const [recipient, setRecipient] = useState<string | null>(null);
@@ -12,6 +13,7 @@ const HomeContent: React.FC = () => {
     const handleConversationClick = (username: string) => {
         setSelectedConversation(username);
     };
+
     return (
         <div className="bg-white h-full p-4">
             <h1 className="text-black font-bold text-2xl mb-4 text-center">Messaging</h1>

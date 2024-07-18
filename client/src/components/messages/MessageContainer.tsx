@@ -4,17 +4,7 @@ import Messages from './Messages';
 import useGetMessage from "../../hooks/useGetMessage";
 import useConversation from "../../zustand/useConversation";
 
-interface MessageData {
-    id: string;
-    sender: string;
-    content: string;
-    timestamp: string;
-    isSent: boolean;
-}
 
-interface MessageContainerProps {
-    recipient: string; // Người nhận tin nhắn
-}
 
 const MessageContainer: React.FC = () => {
     const { selectedConversation, setSelectedConversation } = useConversation();

@@ -6,24 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/LogoutButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/context/SocketContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/SocketContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetUserList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useReLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useRegister.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useSendMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/resgister/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/resgister/Register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +40,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;maixuanthuc&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_PRJ/FrontEnd/client/src/hooks&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_NGAY16/FrontEnd&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -132,6 +114,9 @@
       <workItem from="1721208228377" duration="47000" />
       <workItem from="1721208282728" duration="2000" />
       <workItem from="1721214847717" duration="17000" />
+      <workItem from="1721276042709" duration="129000" />
+      <workItem from="1721276174876" duration="13000" />
+      <workItem from="1721276199301" duration="10000" />
     </task>
     <servers />
   </component>
