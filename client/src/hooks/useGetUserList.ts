@@ -5,15 +5,15 @@ import useConversation from "../zustand/useConversation";
 interface User {
     name: string;
     actionTime: string;
-    id : string
+    id: string;
 }
 
 const useGetUserList = () => {
-    const { setMessages } = useConversation();
+    const { setMessages, addMessage } = useConversation(); // Thêm hàm addMessage từ useConversation
     const { webSocket } = useWebSocket();
 
     const [usernames, setUsernames] = useState<User[]>([]);
-    const [isWebSocketOpen, setIsWebSocketOpen] = useState(false); // State to track WebSocket open state
+    const [isWebSocketOpen, setIsWebSocketOpen] = useState(false);
 
     useEffect(() => {
         const getUserList = async () => {
@@ -29,26 +29,25 @@ const useGetUserList = () => {
                         }
                     }));
                 } else {
-                    setIsWebSocketOpen(false); // WebSocket is not open
+                    setIsWebSocketOpen(false);
                 }
 
                 webSocket.onopen = () => {
-                    setIsWebSocketOpen(true); // WebSocket is open
+                    setIsWebSocketOpen(true);
                 };
 
                 webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
                     if (data.event === 'GET_USER_LIST' && Array.isArray(data.data)) {
-                        const userList = data.data.map((user: User,idx:number) => ({
+                        const userList = data.data.map((user: User, idx: number) => ({
                             name: user.name,
                             actionTime: user.actionTime,
-                            id : idx
+                            id: idx.toString() // Ensure id is a string
                         }));
                         setUsernames(userList);
-                        setMessages(data.data);
-console.log(data.data)
-                    } else if (typeof data === 'object') {
-
+                    } else if (data.event === 'SEND_CHAT') {
+                        addMessage(data.data);
+                        getUserList();
                     } else {
                         console.error('Unexpected data format received:', data);
                     }
@@ -60,7 +59,7 @@ console.log(data.data)
         };
 
         getUserList();
-    }, [webSocket, setMessages]);
+    }, [webSocket, setMessages, addMessage]); // Thêm addMessage vào dependency array
 
     return usernames;
 };

@@ -24,25 +24,28 @@ const useLogin = () => {
                 webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
                     console.log("Server response:", data); // Log server response
-                    if (data.status === "error") {
-                        if (data.mes === "Login error, Wrong Username or Password") {
-                            toast.error("Bạn đã nhập sai tài khoản hoặc mật khẩu, vui lòng đăng nhập lại!!!");
-                        } else {
-                            toast.error(data.mes);
-                        }
-                        return;
+                    if (data.status === "success") {
+                        // Update authUser with username
+                        const authData = {
+                            username: username,
+                            reLoginCode: data.data.RE_LOGIN_CODE // Optionally save reLoginCode if needed
+                        };
+                        setAuthUser(authData);
+                        localStorage.setItem("user", JSON.stringify(authData));
+                        console.log(authData.username)
+                        toast.success("Login successful!");
+                    } else if (data.status === "error") {
+                        toast.error(data.mes || "Login error");
+                    } else {
+                        console.error("Unexpected response from server:", data);
                     }
-                    localStorage.setItem("user", JSON.stringify(data));
-                    setAuthUser(data);
-
-                    toast.success("Login successful!");
                 };
             } else {
                 console.warn("WebSocket is not open yet. Waiting to send login request.");
                 // Optionally handle case where WebSocket is not open yet
             }
         } catch (error: any) {
-            toast.error(error.message);
+            toast.error(error.message || "An error occurred during login");
         }
     };
 

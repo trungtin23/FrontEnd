@@ -3,18 +3,20 @@ import MessageInput from './MessageInput';
 import Messages from './Messages';
 import useGetMessage from "../../hooks/useGetMessage";
 import useConversation from "../../zustand/useConversation";
+import {useAuthContext} from "../../context/AuthContext";
 
 
 
 const MessageContainer: React.FC = () => {
     const { selectedConversation, setSelectedConversation } = useConversation();
-
+    const { authUser } = useAuthContext();
     useEffect(() => {
         // cleanup function (unmounts)
         return () => setSelectedConversation(null);
     }, [setSelectedConversation]);
     if (!selectedConversation) {
-        return <div className="flex flex-col w-full p-4">Vui lòng chọn người dùng để gửi tin nhắn!!!</div>;
+        return <div className="flex flex-col w-full p-4">Xin chào {authUser.username},
+            Vui lòng chọn người dùng để gửi tin nhắn!!!</div>;
     }
     return (
         <div className='flex flex-col w-full h-full'>

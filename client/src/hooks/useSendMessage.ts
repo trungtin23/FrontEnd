@@ -1,20 +1,15 @@
+// useSendMessage.ts
 import { useWebSocket } from "../context/SocketContext";
 import useConversation from "../zustand/useConversation";
 
 const useSendMessage = () => {
-    const { setMessages } = useConversation();
+    const { addMessage } = useConversation();
     const { webSocket } = useWebSocket();
-
-    interface Message {
-        id: number;
-        text: string;
-        sender: string;
-    }
 
     const sendMessage = async (username: string, message: string, type: string) => {
         try {
             if (webSocket) {
-                webSocket.send(JSON.stringify({
+                const messageData = {
                     action: 'onchat',
                     data: {
                         event: 'SEND_CHAT',
@@ -24,15 +19,13 @@ const useSendMessage = () => {
                             mes: message,
                         }
                     }
-                }));
-
-                webSocket.onmessage = (event) => {
-                    const data = JSON.parse(event.data);
-                    if (data.error) {
-                        throw new Error(data.error);
-                    }
-                    setMessages((prevMessages: Message[]) => [...prevMessages, data]);
                 };
+
+                console.log('Sending message:', messageData); // Log the message being sent
+
+                webSocket.send(JSON.stringify(messageData));
+
+
             }
         } catch (error) {
             console.error('Error sending message:', error);

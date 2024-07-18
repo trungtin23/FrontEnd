@@ -14,17 +14,16 @@ interface MessageData {
 const Messages: React.FC = () => {
     const messages: MessageData[] = useGetMessage();
 
+    // Reverse the array to display newer messages at the bottom
+    const reversedMessages = [...messages].reverse();
+
     return (
         <div className="p-4 flex flex-col space-y-2">
-            {messages.map((message: MessageData) => (
+            {reversedMessages.map((message: MessageData) => (
                 <Message
                     key={message.id}
-                    id={message.id}
-                    sender={message.name}
-                    to={message.to}
-                    content={message.mes}
-                    timestamp={message.createAt}
-                     // Check if type is 1 for sent messages
+                    message={message}
+                    // Check if type is 1 for sent messages
                 />
             ))}
         </div>
