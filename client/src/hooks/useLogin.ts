@@ -37,7 +37,6 @@ const useLogin = () => {
                     } else if (data.status === "error") {
                         toast.error(data.mes || "Login error");
                     } else {
-                        console.error("Unexpected response from server:", data);
                     }
                 };
             } else {

@@ -48,8 +48,9 @@ const useGetUserList = () => {
                     } else if (data.event === 'SEND_CHAT') {
                         addMessage(data.data);
                         getUserList();
+
                     } else {
-                        console.error('Unexpected data format received:', data);
+
                     }
                 };
                 }

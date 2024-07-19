@@ -1,32 +1,56 @@
 import React, { useState } from 'react';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { FaCircleArrowRight } from 'react-icons/fa6';
-import useConversation from "../../zustand/useConversation";
-import useGetUserList from "../../hooks/useGetUserList";
+import useCreateRoom from "../../hooks/userCreatRoom";
+
 
 interface SearchButtonProps {
     onShowMessages: (username: string) => void; // Callback to show messages for a username
+    onOpenRoom: (roomName: string) => void; // Callback to open room after creating it
 }
 
-const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages }) => {
+const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [username, setUsername] = useState('');
-    const usernames = useGetUserList(); // Get list of users
+    const { createRoom } = useCreateRoom(); // Hook to create room
+
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
 
     const handleRightButtonClick = () => {
         if (username.trim() !== '') {
-            onShowMessages(username); // Call the callback to show messages for the entered username
+            if (isChecked) {
+                // Create room if checkbox is checked
+                createRoom(username); // Call the function to create a room
+
+                // Open the room dialog after creating it
+                onOpenRoom(username); // Open room dialog with the new room
+                setUsername(''); // Clear the input field after action
+                setIsChecked(false); // Reset the checkbox
+            } else {
+                // Show messages if checkbox is not checked
+                onShowMessages(username); // Call the callback to show messages for the entered username
+                setUsername(''); // Clear the input field after action
+            }
         }
     };
+
+    const handleAddIconClick = () => {
+        if (username.trim() !== '' && isChecked) {
+            createRoom(username); // Create the room
+            onOpenRoom(username); // Open the room dialog
+            setUsername(''); // Clear the input field
+            setIsChecked(false); // Reset the checkbox
+        }
+    };
+
     return (
         <div className='mt-4'>
             <form className='flex items-center' onSubmit={(e) => e.preventDefault()}>
                 <input
                     type='text'
-                    placeholder='Enter username'
+                    placeholder='Enter username or room name'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     className='w-44 text-white input input-bordered rounded-full custom-placeholder bg-slate-300'
@@ -38,7 +62,10 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages }) => {
                     className='checkbox checkbox-primary ml-2 mt-2'
                 />
                 {isChecked && (
-                    <div className='bg-blue-200 h-8 ml-2 mt-1 hover:bg-blue-700 cursor-pointer rounded'>
+                    <div
+                        className='bg-blue-200 h-8 ml-2 mt-1 hover:bg-blue-700 cursor-pointer rounded'
+                        onClick={handleAddIconClick} // Set the event handler for the icon
+                    >
                         <IoMdAddCircleOutline size={30} />
                     </div>
                 )}
