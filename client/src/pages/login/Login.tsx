@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLogin from "../../hooks/useLogin";
-
 interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
@@ -18,12 +17,12 @@ const Login: React.FC<LoginProps> = () => {
   };
 
   return (
-      <div className="bg-gray-100 flex items-center justify-center h-screen">
-        <div className="w-full max-w-xs">
-          <h1 className="text-center font-extrabold text-3xl mb-8 text-black">ĐĂNG NHẬP</h1>
-          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+      <div className=" flex items-center justify-center h-screen ">
+        <div className="w-1/4 p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+          <h1 className="text-center font-extrabold text-3xl mb-8 text-blue-300">ĐĂNG NHẬP</h1>
+          <form className="  px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+              <label className="block text-gray-400 text-sm font-bold mb-2" htmlFor="username">
                 Tài khoản
               </label>
               <input
@@ -36,7 +35,7 @@ const Login: React.FC<LoginProps> = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              <label className="block text-gray-400 text-sm font-bold mb-2" htmlFor="password">
                 Mật khẩu
               </label>
               <input
@@ -51,20 +50,20 @@ const Login: React.FC<LoginProps> = () => {
             </div>
             <div className="flex items-center justify-between">
               <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="submit"
               >
                 Đăng nhập
               </button>
               <button
-                  className="bg-slate-400 w-28 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-slate-300 w-28 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="button"
               >
                 <a href="/register">Đăng ký</a>
               </button>
             </div>
           </form>
-          <p className="text-center text-gray-500 text-xs">
+          <p className="text-center text-gray-200 text-xs">
             &copy;Lập trình FE-2024- Nhóm 4.
           </p>
         </div>

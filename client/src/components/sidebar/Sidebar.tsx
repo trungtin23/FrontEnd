@@ -3,7 +3,7 @@ import SearchButton from './SearchButton';
 import Conversations from './Conversations';
 import LogoutButton from './LogoutButton';
 import useConversation from "../../zustand/useConversation";
-
+import "../css/Custom.css"
 const Sidebar: React.FC = () => {
     const { setSelectedConversation } = useConversation();
 
@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
     };
 
     return (
-        <div className='border-r w-80 border-gray-500 flex flex-col overflow-auto'>
+        <div className='border-r w-80 border-gray-500 flex flex-col overflow-y-auto custom-scrollbar'>
             <div className="p-2">
                 <SearchButton onShowMessages={handleShowMessages} onOpenRoom={handleOpenRoom} />
             </div>

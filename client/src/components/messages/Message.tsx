@@ -18,7 +18,7 @@ const Message: React.FC<MessageProps> = ({ message }) => {
     const fromMe = message.name === authUser.username;
     const chatClassName = fromMe ? "chat-end" : "chat-start";
     const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic; // Use profilePic from conversation
-    const bubbleBgColor = fromMe ? "bg-blue-500" : "";
+    const bubbleBgColor = fromMe ? "bg-cyan-500" : "bg-slate-300";
     const adjustedCreateAt = adjustTimeByHours(message.createAt, 7); // Cộng thêm 7 giờ
     const avatarUrl = `https://picsum.photos/seed/${message.name}/50/50`; // Random avatar URL
 
@@ -33,15 +33,15 @@ const Message: React.FC<MessageProps> = ({ message }) => {
                     />
                 </div>
             </div>
-            <div className="chat-header">
+            <div className="chat-header text-white -ml-3">
                 <span>{  message.name}</span>
                 <time className="text-xs opacity-50"></time>
             </div>
-            <div className="chat-bubble text-white ${bubbleBgColor} ${shakeClass}">
+            <div className={`chat-bubble text-black ${bubbleBgColor} ${shakeClass}`}>
                 <p> {message.mes}</p>
             </div>
             {/* Optional: Display 'Delivered' message for sent messages */}
-            {  <div className="chat-footer opacity-50"> {adjustedCreateAt}</div>}
+            {  <div className="chat-footer opacity-50 text-white"> {adjustedCreateAt}</div>}
         </div>
     );
 };

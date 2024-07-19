@@ -21,8 +21,8 @@ const MessageInput: React.FC = () => {
             <div className='w-full'>
                 <input
                     type="text"
-                    className='border-2 border-gray-200 text-xl rounded block p-2 bg-white text-black w-full'
-                    placeholder={`Nhập tin nhắn ở đây`}
+                    className='border-2 border-gray-200 text-sm rounded block p-2 bg-white text-black w-full'
+                    placeholder={`Nhập tin nhắn ở đây...`}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 />

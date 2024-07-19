@@ -2,3 +2,22 @@
     font-size: 13px; /* Chỉnh kích thước text của placeholder */
     color: #ffffff; /* Thay đổi màu của placeholder nếu cần */
 }
+/* custom-scrollbar.css */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 9px; /* Độ rộng của thanh cuộn dọc */
+    height: 6px; /* Độ rộng của thanh cuộn ngang */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: lightgray; /* Màu nền của thanh cuộn */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888; /* Màu của thanh cuộn */
+    border-radius: 15px; /* Bo góc của thanh cuộn */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Màu của thanh cuộn khi hover */
+}
+

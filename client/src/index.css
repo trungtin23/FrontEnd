@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 body {
-    color: black;
-    background-color: white;
+    background: url("../public/pexels-souvenirpixels-1519088.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

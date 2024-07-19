@@ -54,7 +54,7 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
                     placeholder='Enter username or room name'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className='w-44 text-white input input-bordered rounded-full custom-placeholder bg-slate-300'
+                    className='w-44 text-white input input-bordered rounded-full custom-placeholder bg-cyan-600'
                 />
                 <input
                     type='checkbox'
@@ -64,21 +64,21 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
                 />
                 {isChecked && (
                     <div
-                        className='bg-blue-200 h-8 ml-2 mt-1 hover:bg-blue-700 cursor-pointer rounded'
+                        className=' h-8 ml-2 mt-1 0 cursor-pointer rounded'
                         onClick={handleAddIconClick} // Set the event handler for the icon
                     >
                         <IoMdAddCircleOutline size={30} />
                     </div>
                 )}
                 <div
-                    className='bg-blue-200 hover:bg-blue-700 h-8 ml-2 w-8 justify-center flex items-center mt-1 cursor-pointer rounded'
+                    className='    h-8 ml-2 w-8 justify-center flex items-center mt-1 cursor-pointer rounded'
                     onClick={handleRightButtonClick}
                 >
                     <FaCircleArrowRight style={{ color: 'black' }} size={24} />
                 </div>
             </form>
             <div>
-                <p className='text-xs text-center -mt-3 ml-28'>Phòng</p>
+                <p className='text-sm text-white text-center -mt-2 ml-24'>Room</p>
             </div>
         </div>
     );
