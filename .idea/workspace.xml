@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/zustand/useConversation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/zustand/useConversation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,21 +40,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "maixuanthuc",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/FE/FE_NGAY16/FrontEnd",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\FE\\FE_NGAY18\\FrontEnd\\client\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;maixuanthuc&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_NGAY16/FrontEnd&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\FE\\FE_NGAY18\\FrontEnd\\client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\FE\FE_PRJ\FrontEnd\client\src\hooks" />
@@ -126,6 +123,9 @@
       <workItem from="1721276174876" duration="13000" />
       <workItem from="1721276199301" duration="10000" />
       <workItem from="1721299951049" duration="6789000" />
+      <workItem from="1721307262289" duration="4770000" />
+      <workItem from="1721316881199" duration="1592000" />
+      <workItem from="1721352825431" duration="3811000" />
     </task>
     <servers />
   </component>

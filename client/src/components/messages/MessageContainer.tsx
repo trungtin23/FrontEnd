@@ -25,7 +25,7 @@ const MessageContainer: React.FC = () => {
                 <span className='text-gray-500 font-bold'>{selectedConversation.name}</span>
             </div>
             <div className='flex-1 p-4 overflow-y-auto'>
-                <Messages />
+                <Messages     />
             </div>
             <div className="mt-auto">
                 <MessageInput />

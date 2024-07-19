@@ -1,3 +1,5 @@
+// zustand/useConversation.js
+
 import { create } from 'zustand';
 
 const useConversation = create((set) => ({
@@ -5,8 +7,8 @@ const useConversation = create((set) => ({
     setSelectedConversation: (selectedConversation) => set({ selectedConversation }),
     messages: [],
     setMessages: (messages) => set({ messages }),
-
-    // Function to add a new message to the messages array
+    recipient: null, // New state to store the recipient username
+    setRecipient: (recipient) => set({ recipient }),
     addMessage: (newMessage) => set((state) => ({
         messages: [...state.messages, newMessage],
     })),

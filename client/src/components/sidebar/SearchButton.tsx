@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { FaCircleArrowRight } from 'react-icons/fa6';
+import useConversation from "../../zustand/useConversation";
+import useGetUserList from "../../hooks/useGetUserList";
 
 interface SearchButtonProps {
     onShowMessages: (username: string) => void; // Callback to show messages for a username
@@ -9,7 +11,7 @@ interface SearchButtonProps {
 const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [username, setUsername] = useState('');
-
+    const usernames = useGetUserList(); // Get list of users
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
@@ -19,7 +21,6 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages }) => {
             onShowMessages(username); // Call the callback to show messages for the entered username
         }
     };
-
     return (
         <div className='mt-4'>
             <form className='flex items-center' onSubmit={(e) => e.preventDefault()}>
