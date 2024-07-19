@@ -15,7 +15,9 @@ const Conversations: React.FC = () => {
                     key={user.id}
                     name={user.name} // Use 'name' as username prop
                     actionTime={user.actionTime} // Pass actionTime to Conversation if needed
-                    id={user.id}/>
+                    id={user.id}
+                    type={user.type}
+                />
             ))}
         </div>
     );

@@ -19,7 +19,7 @@ const HomeContent: React.FC = () => {
             <h1 className="text-black font-bold text-2xl mb-4 text-center">Messaging</h1>
             <div className="flex items-center justify-center mb-4">
                 <div className="border-2 border-gray-400 flex h-700 w-900">
-                    <Sidebar onShowMessages={handleShowMessages} />
+                    <Sidebar />
 
                         <div className="flex-1">
                             <div className=" rounded-lg h-full ">

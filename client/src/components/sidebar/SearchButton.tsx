@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import { FaCircleArrowRight } from 'react-icons/fa6';
 import useCreateRoom from "../../hooks/userCreatRoom";
-
+import useJoinRoom from "../../hooks/useJoinRoom";
 
 interface SearchButtonProps {
     onShowMessages: (username: string) => void; // Callback to show messages for a username
@@ -13,6 +13,7 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
     const [isChecked, setIsChecked] = useState(false);
     const [username, setUsername] = useState('');
     const { createRoom } = useCreateRoom(); // Hook to create room
+    const { joinRoom } = useJoinRoom(); // Hook to create room
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
@@ -22,10 +23,9 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
         if (username.trim() !== '') {
             if (isChecked) {
                 // Create room if checkbox is checked
-                createRoom(username); // Call the function to create a room
-
-                // Open the room dialog after creating it
-                onOpenRoom(username); // Open room dialog with the new room
+                joinRoom(username).then(() => {
+                    onOpenRoom(username); // Open room dialog with the new room
+                });
                 setUsername(''); // Clear the input field after action
                 setIsChecked(false); // Reset the checkbox
             } else {
@@ -38,8 +38,9 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
 
     const handleAddIconClick = () => {
         if (username.trim() !== '' && isChecked) {
-            createRoom(username); // Create the room
-            onOpenRoom(username); // Open the room dialog
+            createRoom(username).then(() => {
+                onOpenRoom(username); // Open the room dialog
+            });
             setUsername(''); // Clear the input field
             setIsChecked(false); // Reset the checkbox
         }
