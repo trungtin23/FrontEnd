@@ -33,7 +33,7 @@ const useLogout = () => {
                 localStorage.removeItem("user");
                 setAuthUser(null);
 
-                toast.success("Logout successful!");
+                toast.success("Đăng xuất thành công!");
             };
            }
         } catch (error: any) { // Catch-all type for error handling

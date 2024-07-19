@@ -6,6 +6,8 @@ interface User {
     name: string;
     actionTime: string;
     id: string;
+    type: number; //
+
 }
 
 const useGetUserList = () => {
@@ -42,14 +44,16 @@ const useGetUserList = () => {
                         const userList = data.data.map((user: User, idx: number) => ({
                             name: user.name,
                             actionTime: user.actionTime,
+                            type : user.type,
                             id: idx.toString() // Ensure id is a string
                         }));
                         setUsernames(userList);
                     } else if (data.event === 'SEND_CHAT') {
                         addMessage(data.data);
                         getUserList();
+
                     } else {
-                        console.error('Unexpected data format received:', data);
+
                     }
                 };
                 }
