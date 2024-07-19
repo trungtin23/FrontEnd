@@ -13,8 +13,7 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
     const [isChecked, setIsChecked] = useState(false);
     const [username, setUsername] = useState('');
     const { createRoom } = useCreateRoom(); // Hook to create room
-    const { joinRoom } = useJoinRoom(); // Hook to create room
-
+        const {joinRoom} = useJoinRoom();
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
@@ -24,7 +23,8 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
             if (isChecked) {
                 // Create room if checkbox is checked
                 joinRoom(username).then(() => {
-                    onOpenRoom(username); // Open room dialog with the new room
+                    onShowMessages(username); // Call the callback to show messages for the entered username
+
                 });
                 setUsername(''); // Clear the input field after action
                 setIsChecked(false); // Reset the checkbox

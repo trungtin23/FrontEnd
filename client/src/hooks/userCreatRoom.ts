@@ -1,5 +1,6 @@
 // hooks/useCreateRoom.js
 import { useWebSocket } from "../context/SocketContext";
+import toast from "react-hot-toast";
 
 const useCreateRoom = () => {
     const { webSocket } = useWebSocket();
@@ -17,12 +18,14 @@ const useCreateRoom = () => {
 
                 webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
-                    console.log(event.data)
-                    if (data.event === 'CREATE_ROOM_SUCCESS') {
-                        resolve(data);
 
-                    } else if (data.event === 'CREATE_ROOM_ERROR') {
-                        reject(data.error);
+                    if (data.event === 'CREATE_ROOM' && data.status==="succes") {
+                        console.log("Server response:", data);
+                        toast.success('Tạo room thành công!!!');
+
+                    } else if (data.status === 'error') {
+
+                        toast.error('Room đã tồn tại!!!');
                     }
                 };
             } else {

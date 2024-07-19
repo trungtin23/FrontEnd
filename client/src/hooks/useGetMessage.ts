@@ -50,8 +50,6 @@ const useGetMessage = () => {
                 // Handle incoming messages
                 const handleMessage = (event: MessageEvent) => {
                     const data = JSON.parse(event.data);
-                    console.log('Received message:', data); // Log incoming messages
-
                     if (data.event === 'GET_PEOPLE_CHAT_MES') {
                         const messageList: Message[] = data.data.map((message: any) => ({
                             id: message.id,
@@ -73,26 +71,6 @@ const useGetMessage = () => {
                             createAt: message.createAt,
                         }));
                         setMessages(messageList);
-
-                        // Optionally, handle the user list if needed
-                        console.log('Room user list:', roomData.userList);
-                    } else if (data.event === 'SEND_CHAT') {
-                        const newMessage: Message = {
-                            id: data.id,
-                            name: data.name,
-                            to: data.to,
-                            mes: data.mes,
-                            type: data.type,
-                            createAt: data.createAt,
-                        };
-                        setMessages((prevMessages: Message[]) => [...prevMessages, newMessage]);
-                    } else if (data.event === 'CREATE_ROOM') {
-                        if (data.status === 'success') {
-                            toast.success(`Room "${selectedConversation.name}" created successfully!`);
-                            setSelectedConversation({ name: selectedConversation.name, type: 1 });
-                        } else if (data.status === 'error') {
-                            toast.error(`Error creating room: ${data.mes}`);
-                        }
                     }
                 };
 

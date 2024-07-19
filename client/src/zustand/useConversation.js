@@ -8,7 +8,7 @@ const useConversation = create((set) => ({
     conversations: [], // Initialize conversations array
     setConversations: (conversations) => set({ conversations }),
     addMessage: (newMessage) => set((state) => ({
-        messages: [...state.messages, newMessage],
+        messages: [ newMessage,...state.messages], // Add new message to the end of the array
     })),
     removeConversation: (id) => set((state) => ({
         conversations: state.conversations.filter(convo => convo.id !== id),

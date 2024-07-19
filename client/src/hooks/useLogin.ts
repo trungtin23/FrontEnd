@@ -33,9 +33,9 @@ const useLogin = () => {
                         setAuthUser(authData);
                         localStorage.setItem("user", JSON.stringify(authData));
                         console.log(authData.username)
-                        toast.success("Login successful!");
+                        toast.success("Đăng nhập thành công!");
                     } else if (data.status === "error") {
-                        toast.error(data.mes || "Login error");
+                        toast.error("Tài khoản hoặc mật khẩu đã sai, vui lòng đăng nhập lại!!!");
                     } else {
                     }
                 };
