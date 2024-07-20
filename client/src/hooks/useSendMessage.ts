@@ -36,7 +36,7 @@ const useSendMessage = () => {
                     to: selectedConversation.name,
                     mes: message,
                     type,
-                    createAt: new Date().toISOString(), // Set the creation time
+                    createAt: Date.now(), // Set the creation time
                 };
                 addMessage(newMessage); // Update the state with the new message
             }

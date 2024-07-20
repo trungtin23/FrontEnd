@@ -15,7 +15,7 @@ const LogoutButton: React.FC = () => {
             <div className="text-white">
                         <CiLogout />
                     </div>
-            <p onClick={logout} className='ml-2 text-sm text-white'>Đăng xuất</p>
+            <p onClick={logout} className='ml-2 text-sm text-white'>Log out</p>
         </div>
     );
 };
