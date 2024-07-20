@@ -3,7 +3,7 @@ import { IoMdAddCircleOutline } from 'react-icons/io';
 import { FaCircleArrowRight } from 'react-icons/fa6';
 import useCreateRoom from "../../hooks/userCreatRoom";
 import useJoinRoom from "../../hooks/useJoinRoom";
-
+import "../css/Custom.css"
 interface SearchButtonProps {
     onShowMessages: (username: string) => void; // Callback to show messages for a username
     onOpenRoom: (roomName: string) => void; // Callback to open room after creating it
@@ -60,21 +60,21 @@ const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom 
                     type='checkbox'
                     checked={isChecked}
                     onChange={handleCheckboxChange}
-                    className='checkbox checkbox-primary ml-2 mt-2'
+                    className='checkbox checkbox-primary  ml-2 mt-1'
                 />
                 {isChecked && (
                     <div
-                        className=' h-8 ml-2 mt-1 0 cursor-pointer rounded'
+                        className=' h-8 ml-2 mt-1 0 cursor-pointer rounded icon-container'
                         onClick={handleAddIconClick} // Set the event handler for the icon
                     >
-                        <IoMdAddCircleOutline size={30} />
+                        <IoMdAddCircleOutline className="icon-add"  size={30}  />
                     </div>
                 )}
                 <div
-                    className='    h-8 ml-2 w-8 justify-center flex items-center mt-1 cursor-pointer rounded'
+                    className='  icon-container  h-8 ml-2 w-8 justify-center flex items-center mt-1 cursor-pointer rounded '
                     onClick={handleRightButtonClick}
                 >
-                    <FaCircleArrowRight style={{ color: 'black' }} size={24} />
+                    <FaCircleArrowRight className="icon-right" size={26} />
                 </div>
             </form>
             <div>

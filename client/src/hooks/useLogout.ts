@@ -2,11 +2,13 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useWebSocket } from "../context/SocketContext";
 import { useAuthContext } from "../context/AuthContext";
+import {useNavigate} from "react-router-dom";
 
 const useLogout = () => {
 
     const { webSocket } = useWebSocket();
     const { setAuthUser } = useAuthContext();
+    const navigate = useNavigate();
 
     const logout = async () => {
 
@@ -32,8 +34,10 @@ const useLogout = () => {
                 // Clear user data from localStorage and context
                 localStorage.removeItem("user");
                 setAuthUser(null);
+                navigate('/login'); // Điều hướng về trang đăng nhập sau khi đăng xuất
 
                 toast.success("Logout successful!");
+
             };
            }
         } catch (error: any) { // Catch-all type for error handling

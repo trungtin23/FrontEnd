@@ -17,7 +17,6 @@ const adjustTimeByHours = (dateString: string, hours: number) => {
 };
 const Conversation: React.FC<ConversationProps> = ({ id,name,actionTime, type }) => {
     const { selectedConversation, setSelectedConversation } = useConversation();
-    const { removeConversation } = useConversation();
 
     const isSelected = selectedConversation?._id === id;
     const handleClick = () => {
@@ -25,10 +24,7 @@ const Conversation: React.FC<ConversationProps> = ({ id,name,actionTime, type })
 
 
     };
-    const handleDelete = () => {
-        // Call function to remove conversation
-        removeConversation(id); // Ensure removeConversation is defined in your zustand store
-    };
+
     const avatarUrl = `https://picsum.photos/seed/${name}/50/50`; // Random avatar URL
     const adjustedActionTime = adjustTimeByHours(actionTime, 7); // Cộng thêm 7 giờ
 
@@ -53,9 +49,7 @@ const Conversation: React.FC<ConversationProps> = ({ id,name,actionTime, type })
                 <time >{adjustedActionTime}</time>
             </div>
 
-                <button onClick={handleDelete} className="text-red-300">
-                    <FaTrash/>
-                </button>
+
 
 
         </div>

@@ -9,12 +9,10 @@ const Sidebar: React.FC = () => {
 
     const handleShowMessages = (username: string) => {
         setSelectedConversation({ name: username, type: "people" });
-        // Open the messages dialog for the selected conversation
     };
 
     const handleOpenRoom = (roomName: string) => {
         setSelectedConversation({ name: roomName, type: "group" });
-        // Open the room dialog for the selected room
     };
 
     return (

@@ -19,16 +19,7 @@ root.render(
             <AuthContextProvider>
                 <WebSocketProvider>
                     <App />
-                    <ToastContainer
-                        position="top-right" // Thay đổi vị trí của thông báo
-                        autoClose={1000} // Thay đổi thời gian tự động đóng
-                        hideProgressBar={false} // Hiển thị hoặc ẩn thanh tiến trình
-                        closeOnClick // Hiển thị nút đóng
-                        pauseOnHover
-                        draggable
-                        pauseOnFocusLoss
-                        theme="light" // Hoặc "dark" tùy thuộc vào theme của bạn
-                    />
+
                 </WebSocketProvider>
             </AuthContextProvider>
         </BrowserRouter>

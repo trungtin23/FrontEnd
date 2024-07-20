@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useWebSocket } from "../context/SocketContext";
 import useConversation from "../zustand/useConversation";
+import useSendMessage from "./useSendMessage";
 
 interface User {
     name: string;
@@ -16,6 +17,7 @@ const useGetUserList = () => {
 
     const [usernames, setUsernames] = useState<User[]>([]);
     const [isWebSocketOpen, setIsWebSocketOpen] = useState(false);
+
 
     useEffect(() => {
         const getUserList = async () => {
@@ -50,7 +52,8 @@ const useGetUserList = () => {
                         setUsernames(userList);
                     } else if (data.event === 'SEND_CHAT') {
                         addMessage(data.data);
-                        getUserList();
+                        console.log(data.data)
+
 
                     } else {
 

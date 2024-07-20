@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import Message from './Message';
 import useGetMessage from "../../hooks/useGetMessage";
+import { Emoji } from 'emoji-mart';
 
 interface MessageData {
     id: string;
@@ -27,9 +28,8 @@ const Messages: React.FC = () => {
             {reversedMessages.map((message: MessageData) => (
                 <Message
                     key={message.id}
-                    message={message}
-                    // Check if type is 1 for sent messages
-                />
+
+                 message={message}/>
             ))}
             <div ref={endOfMessagesRef} /> {/* Giúp cuộn đến cuối */}
         </div>

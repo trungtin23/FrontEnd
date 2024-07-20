@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@emoji-mart/data": "^1.2.1",
+    "@emoji-mart/react": "^1.1.1",
+    "emoji-datasource": "^15.1.2",
+    "react-emoji-render": "^2.0.1"
+  }
+}
