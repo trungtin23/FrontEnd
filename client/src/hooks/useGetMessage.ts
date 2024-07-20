@@ -29,13 +29,10 @@ const useGetMessage = () => {
 
         const getMessage = async () => {
             try {
-                // Clear previous messages if any
                 setMessages([]);
 
-                // Determine the event type based on the conversation type
                 const eventType = selectedConversation.type === 1 ? "GET_ROOM_CHAT_MES" : "GET_PEOPLE_CHAT_MES";
 
-                // Send request to get messages
                 webSocket.send(JSON.stringify({
                     action: 'onchat',
                     data: {
@@ -47,9 +44,9 @@ const useGetMessage = () => {
                     }
                 }));
 
-                // Handle incoming messages
                 const handleMessage = (event: MessageEvent) => {
                     const data = JSON.parse(event.data);
+
                     if (data.event === 'GET_PEOPLE_CHAT_MES') {
                         const messageList: Message[] = data.data.map((message: any) => ({
                             id: message.id,

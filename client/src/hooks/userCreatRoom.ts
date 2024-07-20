@@ -21,11 +21,11 @@ const useCreateRoom = () => {
 
                     if (data.event === 'CREATE_ROOM' && data.status==="succes") {
                         console.log("Server response:", data);
-                        toast.success('Tạo room thành công!!!');
+                        toast.success('Creat Room Successful!!!');
 
                     } else if (data.status === 'error') {
 
-                        toast.error('Room đã tồn tại!!!');
+                        toast.error('Room is Exist!!!');
                     }
                 };
             } else {

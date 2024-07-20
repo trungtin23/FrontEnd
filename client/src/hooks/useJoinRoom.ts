@@ -25,11 +25,12 @@ const useJoinRoom = () => {
                     const data = JSON.parse(event.data);
                         console.log(data)
 
-                        if (data.status === 'success') {
+                        if (data.event ='JOIN_ROOM' && data.status === 'success') {
                             toast.success(`Joined room "${roomName}" successfully!`);
                             setSelectedConversation({ name: roomName, type: 1 });
 
-                        } else if (data.status === 'error') {
+                        }
+                else if (data.status === 'error') {
 
                             toast.error(`Error joining room: ${data.mes}`
 
@@ -42,11 +43,7 @@ const useJoinRoom = () => {
 
                 // Add event listener for handling WebSocket messages
                 webSocket.addEventListener('message', handleWebSocketMessage);
-
-                // Ensure to clean up event listeners to prevent memory leaks
-                return () => {
-                    webSocket.removeEventListener('message', handleWebSocketMessage);
-                };
+                webSocket.removeEventListener('message', handleWebSocketMessage);
 
             } else {
                 toast.error('WebSocket is not connected.');

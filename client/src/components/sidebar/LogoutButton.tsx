@@ -12,10 +12,10 @@ const LogoutButton: React.FC = () => {
 
     return (
         <div className='flex items-end mt-auto cursor-pointer' >
-            <div>
+            <div className="text-white">
                         <CiLogout />
                     </div>
-            <p onClick={logout} className='ml-2 text-sm'>Đăng xuất</p>
+            <p onClick={logout} className='ml-2 text-sm text-white'>Log out</p>
         </div>
     );
 };

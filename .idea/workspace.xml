@@ -8,21 +8,28 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/css/Custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/css/Custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Message.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useJoinRoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useJoinRoom.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/userCreatRoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/userCreatRoom.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/zustand/useConversation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/zustand/useConversation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +42,7 @@
         <option value="tsconfig.json" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -55,10 +63,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;maixuanthuc&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_NGAY16/FrontEnd&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -139,6 +149,8 @@
       <workItem from="1721307262289" duration="4770000" />
       <workItem from="1721316881199" duration="1592000" />
       <workItem from="1721352825431" duration="13988000" />
+      <workItem from="1721409836571" duration="4869000" />
+      <workItem from="1721484691563" duration="7458000" />
     </task>
     <servers />
   </component>

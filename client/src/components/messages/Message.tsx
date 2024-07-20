@@ -1,28 +1,40 @@
 import React from 'react';
-import {useAuthContext} from "../../context/AuthContext";
+import { useAuthContext } from "../../context/AuthContext";
 import useConversation from "../../zustand/useConversation";
-import {id} from "date-fns/locale";
+import { Twemoji } from 'react-emoji-render'; // Import Twemoji or Emojione from react-emoji-render
 
 interface MessageProps {
-   message : any
+         message: {
+
+        name: string;
+        to: string;
+        mes: string;
+        type: number;
+        createAt: string;
+        shouldShake?: boolean;
+    }
 }
+
 const adjustTimeByHours = (dateString: string, hours: number) => {
     const date = new Date(dateString);
     date.setHours(date.getHours() + hours);
-    return date.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }); // Cập nhật theo múi giờ Việt Nam
+    return date.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }); // Adjust to Vietnam time zone
 };
+
 const Message: React.FC<MessageProps> = ({ message }) => {
-    // Logic to determine if the message is sent or received
     const { authUser } = useAuthContext();
     const { selectedConversation } = useConversation();
     const fromMe = message.name === authUser.username;
     const chatClassName = fromMe ? "chat-end" : "chat-start";
-    const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic; // Use profilePic from conversation
-    const bubbleBgColor = fromMe ? "bg-blue-500" : "";
-    const adjustedCreateAt = adjustTimeByHours(message.createAt, 7); // Cộng thêm 7 giờ
-    const avatarUrl = `https://picsum.photos/seed/${message.name}/50/50`; // Random avatar URL
+    const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic;
+    const bubbleBgColor = fromMe ? "bg-cyan-500" : "bg-slate-300";
+    const adjustedCreateAt = adjustTimeByHours(message.createAt, 7);
+    const avatarUrl = `https://picsum.photos/seed/${message.name}/50/50`; // Fallback image URL
 
     const shakeClass = message.shouldShake ? "shake" : "";
+
+
+
     return (
         <div className={`chat ${chatClassName}`}>
             <div className="chat-image avatar">
@@ -33,19 +45,18 @@ const Message: React.FC<MessageProps> = ({ message }) => {
                     />
                 </div>
             </div>
-            <div className="chat-header">
-                <span>{  message.name}</span>
-                <time className="text-xs opacity-50"></time>
+            <div className="chat-header text-white -ml-3">
+                <span>{message.name}</span>
             </div>
-            <div className="chat-bubble text-white ${bubbleBgColor} ${shakeClass}">
-                <p> {message.mes}</p>
+            <div className={`chat-bubble text-black ${bubbleBgColor} ${shakeClass}`}>
+                {message.mes}
             </div>
-            {/* Optional: Display 'Delivered' message for sent messages */}
-            {  <div className="chat-footer opacity-50"> {adjustedCreateAt}</div>}
+            <div className="chat-footer text-white">
+                <time className="text-xs opacity-50">{adjustedCreateAt}</time>
+
+            </div>
         </div>
     );
 };
 
 export default Message;
-
-

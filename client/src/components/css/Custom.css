@@ -2,3 +2,54 @@
     font-size: 13px; /* Chỉnh kích thước text của placeholder */
     color: #ffffff; /* Thay đổi màu của placeholder nếu cần */
 }
+/* custom-scrollbar.css */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 9px; /* Độ rộng của thanh cuộn dọc */
+    height: 6px; /* Độ rộng của thanh cuộn ngang */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.25); /* Màu nền của thanh cuộn */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(211, 211, 211, 0.53); /* Màu của thanh cuộn */
+    border-radius: 15px; /* Bo góc của thanh cuộn */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: lightgray; /* Màu của thanh cuộn khi hover */
+}
+
+/* styles.css or any CSS file you are using */
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem; /* 8 x 8 is equal to 2rem x 2rem */
+    height: 2rem;
+    margin-left: 0.5rem;
+    margin-top: 0.25rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.icon-add {
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+.icon-right {
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
+.icon-container:hover .icon-add {
+    transform: scale(1.3) rotate(45deg); /* Increase size by 20% and rotate 45 degrees */
+    color: cyan; /* Change color on hover if needed */
+}
+.icon-container:hover .icon-right{
+    transform: scale(1.3) rotate(45deg); /* Increase size by 20% and rotate 45 degrees */
+    color: cyan; /* Change color on hover if needed */
+}
