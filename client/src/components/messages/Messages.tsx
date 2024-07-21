@@ -8,14 +8,14 @@ interface MessageData {
     name: string;
     to: string;
     mes: string;
-    type: number; // Assuming type is 0 for received and 1 for sent
+    type: number;
     createAt: string;
 }
 
 const Messages: React.FC = () => {
     const messages: MessageData[] = useGetMessage();
 
-    // Reverse the array to display newer messages at the bottom
+
     const reversedMessages = [...messages].reverse();
     const endOfMessagesRef = useRef<HTMLDivElement | null>(null);
 

@@ -44,9 +44,9 @@ const useGetMessage = () => {
                     }
                 }));
 
-                const handleMessage = (event: MessageEvent) => {
+                webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
-
+                    console.log(data)
                     if (data.event === 'GET_PEOPLE_CHAT_MES') {
                         const messageList: Message[] = data.data.map((message: any) => ({
                             id: message.id,
@@ -71,11 +71,7 @@ const useGetMessage = () => {
                     }
                 };
 
-                webSocket.addEventListener('message', handleMessage);
 
-                return () => {
-                    webSocket.removeEventListener('message', handleMessage);
-                };
             } catch (error) {
                 console.error('Error fetching messages:', error);
             }

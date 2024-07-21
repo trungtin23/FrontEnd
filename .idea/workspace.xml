@@ -7,9 +7,19 @@
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/context/SocketAPI.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/SocketContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/SocketContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useJoinRoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useJoinRoom.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useRegister.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useRegister.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" afterDir="false" />
     </list>
@@ -133,7 +143,8 @@
       <workItem from="1721352825431" duration="13988000" />
       <workItem from="1721409836571" duration="4869000" />
       <workItem from="1721484691563" duration="7686000" />
-      <workItem from="1721534965482" duration="6026000" />
+      <workItem from="1721534965482" duration="12378000" />
+      <workItem from="1721570537114" duration="4424000" />
     </task>
     <servers />
   </component>

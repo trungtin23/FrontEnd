@@ -31,7 +31,7 @@ const useSendMessage = () => {
 
                 webSocket.send(JSON.stringify(messageData));
 
-                // Add the message to local state immediately
+
                 const newMessage = {
                     id: Date.now(), // Generate a unique id for the message
                     name: authUser.username,
@@ -42,7 +42,7 @@ const useSendMessage = () => {
                 };
                 addMessage(newMessage); // Update the state with the new message
 
-                // Request to update user list
+
                 webSocket.send(JSON.stringify({
                     action: 'onchat',
                     data: {

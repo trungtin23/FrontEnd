@@ -23,7 +23,7 @@ const useLogout = () => {
                 }
             }));
 
-            // Listen for response from server
+
             webSocket.onmessage = (event) => {
                 const data = JSON.parse(event.data);
 
@@ -31,10 +31,10 @@ const useLogout = () => {
                     throw new Error(data.error);
                 }
 
-                // Clear user data from localStorage and context
+
                 localStorage.removeItem("user");
                 setAuthUser(null);
-                navigate('/login'); // Điều hướng về trang đăng nhập sau khi đăng xuất
+                navigate('/login');
 
                 toast.success("Logout successful!");
 

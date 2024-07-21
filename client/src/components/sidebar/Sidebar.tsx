@@ -8,11 +8,11 @@ const Sidebar: React.FC = () => {
     const { setSelectedConversation } = useConversation();
 
     const handleShowMessages = (username: string) => {
-        setSelectedConversation({ name: username, type: "people" });
+        setSelectedConversation({ name: username});
     };
 
     const handleOpenRoom = (roomName: string) => {
-        setSelectedConversation({ name: roomName, type: "group" });
+        setSelectedConversation({ name: roomName});
     };
 
     return (

@@ -23,7 +23,7 @@ const useRegister = () => {
                 }
             }));
 
-            // Listen for server response
+
             webSocket.onmessage = (event) => {
                 const data = JSON.parse(event.data);
 
@@ -36,7 +36,7 @@ const useRegister = () => {
                     return;
                 }
 
-                // Handle successful registration
+
                 localStorage.setItem("user", JSON.stringify(data));
                 setAuthUser(data);
 

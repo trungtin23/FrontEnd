@@ -25,8 +25,8 @@ const Conversation: React.FC<ConversationProps> = ({ id,name,actionTime, type })
 
     };
 
-    const avatarUrl = `https://picsum.photos/seed/${name}/50/50`; // Random avatar URL
-    const adjustedActionTime = adjustTimeByHours(actionTime, 7); // Cộng thêm 7 giờ
+    const avatarUrl = `https://picsum.photos/seed/${name}/50/50`;
+    const adjustedActionTime = adjustTimeByHours(actionTime, 7);
 
     return (
         <div

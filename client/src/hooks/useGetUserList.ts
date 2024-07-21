@@ -42,18 +42,20 @@ const useGetUserList = () => {
 
                 webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
+
                     if (data.event === 'GET_USER_LIST' && Array.isArray(data.data)) {
                         const userList = data.data.map((user: User, idx: number) => ({
                             name: user.name,
                             actionTime: user.actionTime,
                             type : user.type,
-                            id: idx.toString() // Ensure id is a string
+                            id: idx.toString()
                         }));
                         setUsernames(userList);
+
                     } else if (data.event === 'SEND_CHAT') {
                         addMessage(data.data);
-                        console.log(data.data)
 
+                                getUserList()
 
                     } else {
 
@@ -63,8 +65,8 @@ const useGetUserList = () => {
             } catch (error) {
                 console.error('Error while fetching user list:', error);
             }
-        };
 
+        };
         getUserList();
     }, [webSocket, setMessages, addMessage]); // Thêm addMessage vào dependency array
 
