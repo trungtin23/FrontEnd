@@ -7,13 +7,13 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Register from "./pages/resgister/Register";
 
+
 const App: React.FC = () => {
-    const { authUser } = useAuthContext(); // Lấy trạng thái đăng nhập từ context
+    const { authUser } = useAuthContext();
     const { selectedConversation } = useConversation();
     const navigate = useNavigate();
-
     useEffect(() => {
-        // Kiểm tra nếu đã đăng nhập và có selectedConversation
+
         if (authUser && selectedConversation) {
             const conversationName = selectedConversation.name;
             const conversationType = selectedConversation.type;

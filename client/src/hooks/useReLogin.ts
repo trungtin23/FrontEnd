@@ -1,18 +1,23 @@
 import { useEffect } from "react";
-import toast from "react-hot-toast";
 import { useWebSocket } from "../context/SocketContext";
 import { useAuthContext } from "../context/AuthContext";
 import useGetUserList from "./useGetUserList";
+import { toast } from 'react-toastify';
+
+// Định nghĩa kiểu cho dữ liệu người dùng lưu trữ trong localStorage
+interface AuthData {
+    username: string;
+    reLoginCode: string;
+}
 
 const useReLogin = () => {
     const { webSocket } = useWebSocket();
     const { setAuthUser } = useAuthContext();
-    const userList  = useGetUserList(); // Giả sử bạn có setter cho danh sách người dùng
+    const usernames = useGetUserList(); // Gọi useGetUserList để lấy danh sách người dùng
 
     const reLogin = async (username: string, code: string) => {
         try {
             if (webSocket) {
-                // Gửi yêu cầu đăng nhập lại qua WebSocket
                 webSocket.send(JSON.stringify({
                     action: 'onchat',
                     data: {
@@ -21,52 +26,47 @@ const useReLogin = () => {
                     }
                 }));
 
-                // Lắng nghe phản hồi từ server
-                webSocket.onmessage = async (event) => {
+                webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
 
-                    if (data.error) {
-                        throw new Error(data.error);
+                    if (data.event === 'AUTH' && data.status === 'error' && data.mes === 'User not Login') {
+                        toast.error("User is not logged in. Please log in again.");
+                    } else if (data.event === 'RE_LOGIN' && data.status === "success") {
+                        const authData: AuthData = {
+                            username: data.data.username,
+                            reLoginCode: data.data.RE_LOGIN_CODE
+                        };
+                        setAuthUser(authData);
+
+                        localStorage.setItem("user", JSON.stringify(authData));
+                        toast.success("Re-login successful!");
+
+
+                    } else if (data.status === "error") {
+                        toast.error(`Error: ${data.mes}`);
+                    } else if (data.event === "ACTION_NOT_EXIT") {
+                        toast.error(`Chat Error: ${data.mes}`);
                     }
-
-                    // Cập nhật thông tin người dùng và lưu vào localStorage
-                    localStorage.setItem("user", JSON.stringify(data));
-                    setAuthUser(data);
-
-                    // Gửi yêu cầu để lấy danh sách người dùng
-                    webSocket.send(JSON.stringify({
-                        action: 'onchat',
-                        data: {
-                            event: 'GET_USER_LIST'
-                        }
-                    }));
-
-                    // Lắng nghe phản hồi danh sách người dùng
-                    webSocket.onmessage = (event) => {
-                        const userListData = JSON.parse(event.data);
-
-                        if (userListData.error) {
-                            throw new Error(userListData.error);
-                        }
-
-
-                    };
                 };
             }
         } catch (error: any) {
-
+            toast.error(error.message);
         }
     };
 
     useEffect(() => {
         const user = localStorage.getItem("user");
         if (user) {
-            const { user: username, code } = JSON.parse(user);
-            reLogin(username, code);
+            try {
+                const { username, reLoginCode }: AuthData = JSON.parse(user);
+                reLogin(username, reLoginCode);
+            } catch (error) {
+                console.error("Failed to parse user data from localStorage:", error);
+            }
         }
-    }, [webSocket, setAuthUser]); // Thêm setUserList vào dependencies để useEffect chạy đúng
+    }, [webSocket, setAuthUser]);
 
-    return { reLogin };
+    return { reLogin, usernames };
 };
 
 export default useReLogin;

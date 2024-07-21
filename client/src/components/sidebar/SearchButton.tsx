@@ -12,37 +12,37 @@ interface SearchButtonProps {
 const SearchButton: React.FC<SearchButtonProps> = ({ onShowMessages, onOpenRoom }) => {
     const [isChecked, setIsChecked] = useState(false);
     const [username, setUsername] = useState('');
-    const { createRoom } = useCreateRoom(); // Hook to create room
-        const {joinRoom} = useJoinRoom();
+    const { createRoom } = useCreateRoom();
+    const {joinRoom} = useJoinRoom();
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
 
     const handleRightButtonClick = () => {
-        if (username.trim() !== '') {
-            if (isChecked) {
-                // Create room if checkbox is checked
-                joinRoom(username).then(() => {
-                    onShowMessages(username); // Call the callback to show messages for the entered username
+        if (username.trim() !== ''  && isChecked)  {
 
+                joinRoom(username).then(() => {
+                    onOpenRoom(username);
                 });
-                setUsername(''); // Clear the input field after action
-                setIsChecked(false); // Reset the checkbox
-            } else {
-                // Show messages if checkbox is not checked
-                onShowMessages(username); // Call the callback to show messages for the entered username
-                setUsername(''); // Clear the input field after action
-            }
+
+
+            setUsername('');
+                setIsChecked(false);
+
+        }
+        else {
+
+            onShowMessages(username);
+            setUsername('');
         }
     };
 
     const handleAddIconClick = () => {
         if (username.trim() !== '' && isChecked) {
             createRoom(username).then(() => {
-                onOpenRoom(username); // Open the room dialog
             });
-            setUsername(''); // Clear the input field
-            setIsChecked(false); // Reset the checkbox
+            setUsername('');
+            setIsChecked(false);
         }
     };
 

@@ -8,7 +8,11 @@ const useSendMessage = () => {
     const { webSocket } = useWebSocket();
     const { selectedConversation } = useConversation();
     const { authUser } = useAuthContext();
-
+    const adjustTimeByHours = (dateString: number, hours: number) => {
+        const date = new Date(dateString);
+        date.setHours(date.getHours() + hours);
+        return date.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }); // Adjust to Vietnam time zone
+    };
     const sendMessage = async (username: string, message: string, type: number) => {
         try {
             if (webSocket) {
@@ -27,18 +31,18 @@ const useSendMessage = () => {
 
                 webSocket.send(JSON.stringify(messageData));
 
-                // Add the message to local state immediately
+
                 const newMessage = {
                     id: Date.now(), // Generate a unique id for the message
                     name: authUser.username,
                     to: selectedConversation.name,
                     mes: message,
                     type,
-                    createAt: new Date().toISOString(), // Use ISO string for timestamp
+                    createAt:  adjustTimeByHours(Date.now(),-7)
                 };
                 addMessage(newMessage); // Update the state with the new message
 
-                // Request to update user list
+
                 webSocket.send(JSON.stringify({
                     action: 'onchat',
                     data: {
