@@ -11,7 +11,6 @@ const useLogin = () => {
             const success = handleInputErrors(username, password);
             if (!success) return;
 
-            // Check WebSocket ready state before sending login request
             if (webSocket && webSocket.readyState === WebSocket.OPEN) {
                 webSocket.send(JSON.stringify({
                     action: 'onchat',
@@ -23,25 +22,21 @@ const useLogin = () => {
 
                 webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
-                    console.log("Server response:", data); // Log server response
+                    console.log(data)
                     if (data.status === "success") {
-                        // Update authUser with username
                         const authData = {
                             username: username,
-                            reLoginCode: data.data.RE_LOGIN_CODE // Optionally save reLoginCode if needed
+                            reLoginCode: data.data.RE_LOGIN_CODE
                         };
                         setAuthUser(authData);
                         localStorage.setItem("user", JSON.stringify(authData));
-                        console.log(authData.username)
                         toast.success("Login Successful!");
                     } else if (data.status === "error") {
                         toast.error("Username or password is wrong!!!");
-                    } else {
                     }
                 };
             } else {
                 console.warn("WebSocket is not open yet. Waiting to send login request.");
-                // Optionally handle case where WebSocket is not open yet
             }
         } catch (error: any) {
             toast.error(error.message || "An error occurred during login");
