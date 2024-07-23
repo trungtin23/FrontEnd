@@ -42,7 +42,7 @@ const useGetUserList = () => {
 
                 webSocket.onmessage = (event) => {
                     const data = JSON.parse(event.data);
-
+                    console.log(data)
                     if (data.event === 'GET_USER_LIST' && Array.isArray(data.data)) {
                         const userList = data.data.map((user: User, idx: number) => ({
                             name: user.name,

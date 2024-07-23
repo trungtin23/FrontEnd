@@ -39,15 +39,13 @@ const Conversation: React.FC<ConversationProps> = ({ id,name,actionTime, type })
                 </div>
                 <div className='flex flex-col flex-1'>
                     <div className='flex gap-3 justify-between'>
-                        <p className='font-medium text-sm text-white mt-2 ml-3'>
+                        <p className='font-medium text-sm text-white mt-2 ml-5'>
                             {type===1 ? "[GROUP]" : ""} {name}
                         </p>
                     </div>
                 </div>
             </div>
-            <div className='text-xs text-white'>
-                <time >{adjustedActionTime}</time>
-            </div>
+
 
 
 

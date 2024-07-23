@@ -16,18 +16,18 @@ const useCreateRoom = () => {
                     }
                 }));
 
-                webSocket.onmessage = (event) => {
-                    const data = JSON.parse(event.data);
+                        webSocket.onmessage = (event) => {
+                            const data = JSON.parse(event.data);
+                            console.log(data)
+                            if (data.event === 'CREATE_ROOM' && data.status==="succes") {
+                                console.log("Server response:", data);
+                                toast.success('Creat Room Successful!!!');
 
-                    if (data.event === 'CREATE_ROOM' && data.status==="succes") {
-                        console.log("Server response:", data);
-                        toast.success('Creat Room Successful!!!');
+                            } else if (data.status === 'error') {
 
-                    } else if (data.status === 'error') {
-
-                        toast.error('Room is Exist!!!');
-                    }
-                };
+                                toast.error('Room is Exist!!!');
+                            }
+                        };
             } else {
                 reject('WebSocket not connected');
             }

@@ -6,22 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="68bee0bd-a8bf-4241-8bea-5f7761361b9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/MessageContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messages/Messages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Conversations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/SearchButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/context/SocketContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/SocketContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetMessage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/AuthContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useGetUserList.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/hooks/useJoinRoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useJoinRoom.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useLogout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useReLogin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useRegister.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useRegister.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useSendMessage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/userCreatRoom.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/userCreatRoom.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +46,7 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;maixuanthuc&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/FE/FE_NGAY16/FrontEnd&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -145,6 +134,9 @@
       <workItem from="1721484691563" duration="7686000" />
       <workItem from="1721534965482" duration="12378000" />
       <workItem from="1721570537114" duration="4424000" />
+      <workItem from="1721619983664" duration="843000" />
+      <workItem from="1721620941930" duration="3031000" />
+      <workItem from="1721629711357" duration="3630000" />
     </task>
     <servers />
   </component>

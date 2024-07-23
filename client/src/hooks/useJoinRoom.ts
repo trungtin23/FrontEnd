@@ -8,8 +8,8 @@ const useJoinRoom = () => {
     const { webSocket } = useWebSocket();
     const { setSelectedConversation } = useConversation();
 
-    const joinRoom = useCallback((roomName: string): Promise<void> => {
-        return new Promise((resolve, reject) => {
+        const joinRoom = useCallback((roomName: string): Promise<void> => {
+            return new Promise((resolve, reject) => {
             if (webSocket) {
                 const joinRoomMessage = JSON.stringify({
                     action: 'onchat',
